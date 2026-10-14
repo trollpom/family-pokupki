@@ -1,0 +1,5 @@
+function decode(s:string){return Uint8Array.from(atob(s),c=>c.charCodeAt(0));}
+function encode(bytes:Uint8Array){return btoa(Array.from(bytes,b=>String.fromCharCode(b)).join(''));}
+async function keyFor(master:string){const raw=decode(master);if(raw.length!==32)throw new Error('Secret encryption unavailable');return crypto.subtle.importKey('raw',raw,'AES-GCM',false,['encrypt','decrypt']);}
+export async function sealSecret(master:string,plaintext:string,owner:string){const key=await keyFor(master),iv=crypto.getRandomValues(new Uint8Array(12));const cipher=await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:new TextEncoder().encode(owner)},key,new TextEncoder().encode(plaintext));return 'v1.'+encode(iv)+'.'+encode(new Uint8Array(cipher));}
+export async function openSecret(master:string,sealed:string,owner:string){const [version,nonce,encrypted]=sealed.split('.');if(version!=='v1'||!nonce||!encrypted)throw new Error('Invalid secret envelope');const key=await keyFor(master),plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:decode(nonce),additionalData:new TextEncoder().encode(owner)},key,decode(encrypted));return new TextDecoder().decode(plain);}

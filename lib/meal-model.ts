@@ -1,0 +1,37 @@
+import { z } from 'zod';
+import { stores, primaryStores } from './model';
+export const mealTypes=['breakfast','lunch','dinner'] as const;
+export type MealType=typeof mealTypes[number];
+export const mealNames:Record<MealType,string>={breakfast:'Завтрак',lunch:'Обед',dinner:'Ужин'};
+export const allergenNames:Record<string,string>={gluten:'Глютен',milk:'Молочные белки',egg:'Яйцо',fish:'Рыба',nuts:'Орехи',peanut:'Арахис',soy:'Соя',shellfish:'Морепродукты',sesame:'Кунжут'};
+export const dietNames:Record<string,string>={regular:'Обычное питание',vegetarian:'Вегетарианское',vegan:'Веганское',glutenfree:'Без глютена',dairyfree:'Без молочных продуктов',porkfree:'Без свинины'};
+export type Food={id:string;name:string;unit:'г'|'мл'|'шт';category:string;allergens:string[];animal:boolean;meat:boolean};
+const food=(id:string,name:string,unit:Food['unit'],category:string,allergens:string[]=[],animal=false,meat=false):Food=>({id,name,unit,category,allergens,animal,meat});
+export const foods:Food[]=[
+ food('oats','Овсяные хлопья','г','Бакалея',['gluten']),food('rice','Рис','г','Бакалея'),food('buckwheat','Гречка','г','Бакалея'),food('millet','Пшено','г','Бакалея'),food('pasta','Макароны','г','Бакалея',['gluten']),food('bread','Хлеб','г','Бакалея',['gluten']),food('flour','Пшеничная мука','г','Бакалея',['gluten']),
+ food('milk','Молоко','мл','Молочное',['milk'],true),food('yogurt','Натуральный йогурт','г','Молочное',['milk'],true),food('cheese','Сыр','г','Молочное',['milk'],true),food('cottage','Творог','г','Молочное',['milk'],true),food('eggs','Яйца','шт','Молочное',['egg'],true),food('plantmilk','Соевое молоко','мл','Напитки',['soy']),
+ food('chicken','Куриное филе','г','Мясо и рыба',[],true,true),food('turkey','Филе индейки','г','Мясо и рыба',[],true,true),food('fish','Филе белой рыбы','г','Мясо и рыба',['fish'],true,true),food('beef','Говядина','г','Мясо и рыба',[],true,true),
+ food('potato','Картофель','г','Овощи и фрукты'),food('carrot','Морковь','г','Овощи и фрукты'),food('onion','Лук','г','Овощи и фрукты'),food('tomato','Помидоры','г','Овощи и фрукты'),food('cucumber','Огурцы','г','Овощи и фрукты'),food('pepper','Болгарский перец','г','Овощи и фрукты'),food('zucchini','Кабачки','г','Овощи и фрукты'),food('cabbage','Капуста','г','Овощи и фрукты'),food('pumpkin','Тыква','г','Овощи и фрукты'),food('broccoli','Брокколи','г','Овощи и фрукты'),food('mushroom','Шампиньоны','г','Овощи и фрукты'),food('apple','Яблоки','г','Овощи и фрукты'),food('banana','Бананы','г','Овощи и фрукты'),food('avocado','Авокадо','г','Овощи и фрукты'),
+ food('lentils','Чечевица','г','Бакалея'),food('beans','Фасоль приготовленная','г','Бакалея'),food('chickpeas','Нут приготовленный','г','Бакалея'),food('tofu','Тофу','г','Бакалея',['soy']),food('oil','Растительное масло','мл','Бакалея'),food('salt','Соль','г','Бакалея'),food('sugar','Сахар','г','Бакалея'),food('nuts','Орехи','г','Бакалея',['nuts']),
+];
+export const foodMap=new Map(foods.map(f=>[f.id,f]));
+const foodId=z.string().refine(id=>foodMap.has(id),'Неизвестный продукт');
+export const memberSchema=z.object({id:z.string().min(1).max(100),name:z.string().max(60),age:z.number().min(0).max(120),portion:z.number().min(.25).max(3),diet:z.enum(['regular','vegetarian','vegan','glutenfree','dairyfree','porkfree']),allergies:z.array(z.enum(['gluten','milk','egg','fish','nuts','peanut','soy','shellfish','sesame'])).max(9),excludedFoods:z.array(foodId).max(foods.length),likedFoods:z.array(foodId).max(foods.length),meals:z.array(z.enum(mealTypes)).min(1).max(3)});
+export const familySchema=z.object({catalogScopeVersion:z.literal(1).default(1),members:z.array(memberSchema).min(1).max(12),city:z.string().trim().min(1).max(100),weeklyBudget:z.number().int().min(10000).max(100000000),maxCookMinutes:z.number().int().min(10).max(180),batchDays:z.number().int().min(1).max(3),hasFridge:z.boolean(),equipment:z.array(z.enum(['stove','oven','blender','microwave'])).min(1).max(4),stores:z.array(z.string().refine(id=>stores.some(s=>s.id===id))).min(1).max(stores.length),loyaltyStores:z.array(z.string().refine(id=>stores.some(s=>s.id===id))).max(stores.length),maxStores:z.number().int().min(1).max(4),extraTripCost:z.number().int().min(0).max(1000000),pantry:z.array(z.object({foodId,quantity:z.number().min(0).max(1000000),expiresAt:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable()})).max(100),notes:z.string().max(1000),aiConsent:z.boolean(),medicalDiet:z.boolean()});
+export type FamilyProfile=z.infer<typeof familySchema>;
+export type MealIngredient={foodId:string;quantity:number};
+export type MenuRecipe={id:string;name:string;meal:MealType;time:number;storageDays:number;ingredients:MealIngredient[];steps:string[];equipment:string[];emoji:string;origin:'local'|'deepseek'};
+export type MealGroup={id:string;meal:MealType;days:number[];portionPerDay:number;options:MenuRecipe[];selected:number;rejectedNames?:string[]};
+export type MealSlot={id:string;day:number;meal:MealType;groupId:string;approved:boolean};
+export type MenuData={profile:FamilyProfile;familyRevision:number;groups:MealGroup[];slots:MealSlot[];origin:'local'|'deepseek';createdAt:string;startDate:string};
+export type SavedPlan={id:string;name:string;startDate:string;status:string;revision:number;listId:string|null;data:MenuData;createdAt:string;updatedAt:string};
+export type PriceOffer={id:string;foodId:string;store:string;city:string;name:string;packQuantity:number;price:number;regularPrice:number|null;minPacks:number;loyaltyRequired:number;compositionConfirmed:number;validFrom:string|null;validTo:string|null;url:string|null;kind:string;verifiedAt:string;disabled:number;variableWeight?:boolean;minQuantity?:number|null;quantityStep?:number|null};
+export type BuyRow={foodId:string;name:string;unit:Food['unit'];required:number;pantry:number;toBuy:number;offer:PriceOffer|null;packs:number;cost:number|null;savings:number;alternatives:{offer:PriceOffer;packs:number;cost:number}[]};
+export type Basket={rows:BuyRow[];knownCost:number;tripCost:number;totalCost:number;coverage:number;missing:number;budgetStatus:'unknown'|'over'|'within'|'estimate';stores:string[];savings:number;allApproved:boolean;comparisons:{store:string;cost:number|null;missing:number;coverage:number}[];indicative:boolean};
+export type PlannerState={family:{profile:FamilyProfile;revision:number}|null;plans:SavedPlan[];offers:PriceOffer[];ai:{configured:boolean;model:string;checkedAt:string|null;callsToday:number};catalogMessage:string;sources:{id:string;store:string;city:string;url:string;status:string;message:string;lastSuccess:string|null;products:number}[]};
+export function defaultFamily(city='Нижний Новгород'):FamilyProfile{return {catalogScopeVersion:1,members:[],city,weeklyBudget:0,maxCookMinutes:45,batchDays:2,hasFridge:true,equipment:['stove','oven'],stores:[...primaryStores],loyaltyStores:[],maxStores:2,extraTripCost:0,pantry:[],notes:'',aiConsent:false,medicalDiet:false};}
+export function addDays(start:string,days:number){const d=new Date(start+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+days);return d.toISOString().slice(0,10);}
+
+// Expand the owner's requested comparison networks for legacy profiles once.
+// A saved v1 selection always wins, so users can subsequently exclude stores.
+export function currentFamily(profile:FamilyProfile):FamilyProfile{if(profile.catalogScopeVersion===1)return profile;return {...profile,catalogScopeVersion:1,stores:profile.city==='Нижний Новгород'?[...new Set([...profile.stores,...primaryStores])]:profile.stores};}

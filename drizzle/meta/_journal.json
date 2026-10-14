@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791894360145,
+      "tag": "0000_equal_mauler",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791897081433,
+      "tag": "0001_massive_nomad",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791899700865,
+      "tag": "0002_lethal_wolfpack",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1791958936139,
+      "tag": "0003_overjoyed_starfox",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1791965101140,
+      "tag": "0004_petite_doctor_doom",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1791967940486,
+      "tag": "0005_gigantic_secret_warriors",
+      "breakpoints": true
+    }
+  ]
+}

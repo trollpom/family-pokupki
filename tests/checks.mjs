@@ -1,0 +1,22 @@
+import ts from 'typescript';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+const dir=fs.mkdtempSync(path.resolve('node_modules/.sobrano-checks-'));
+for(const name of ['model','official-catalogs','spar-search','smart-catalog','collector','permissions','catalog-prices','meal-model'])fs.writeFileSync(path.join(dir,name+'.js'),ts.transpileModule(fs.readFileSync('lib/'+name+'.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText);
+const require=createRequire(import.meta.url),collector=require(path.join(dir,'collector.js')),model=require(path.join(dir,'model.js')),permissions=require(path.join(dir,'permissions.js'));
+assert.equal(permissions.roleAllows('viewer','write'),false);assert.equal(permissions.roleAllows('shopper','write'),false);assert.equal(permissions.roleAllows('shopper','buy'),true);assert.equal(permissions.roleAllows('editor','owner'),false);assert.equal(permissions.roleAllows('owner','owner'),true);
+assert.equal(model.listTotal([{price:9999,quantity:2},{price:null,quantity:1},{price:12000,quantity:.5}]),25998);
+assert.throws(()=>collector.validateSourceUrl('https://evil.example/path','5ka'));
+assert.throws(()=>collector.validateSourceUrl('https://5ka.ru.evil.example/path','5ka'));
+assert.throws(()=>collector.validateSourceUrl('http://5ka.ru/catalog/','5ka'));
+assert.throws(()=>collector.validateSourceUrl('https://user:secret@5ka.ru/catalog/','5ka'));
+assert.equal(collector.robotsAllows('User-agent: *\nDisallow: /private/\nAllow: /private/public/','/private/no'),false);
+assert.equal(collector.robotsAllows('User-agent: *\nDisallow: /private/\nAllow: /private/public/','/private/public/a'),true);
+assert.equal(collector.robotsAllows('User-agent: *\nDisallow: /*?*','/goods/?a=1'),false);
+assert.equal(collector.parseProducts('<script type="application/ld+json">'+JSON.stringify({'@type':'Product',name:'Молоко',offers:{price:'99.99',priceCurrency:'RUB',url:'https://5ka.ru/product/milk'}})+'</script>','https://5ka.ru/catalog/')[0].price,9999);
+assert.equal(collector.parseProducts('<script type="application/ld+json">'+JSON.stringify({'@type':'Product',name:'Молоко',offers:{price:10,priceCurrency:'USD'}})+'</script>','https://5ka.ru/catalog/').length,0);
+const fixture=process.argv[2];if(fixture){const html=fs.readFileSync(fixture,'utf8'),rows=collector.parseVkusvill(html,'https://vkusvill.ru/goods/krupy-makarony-muka/makarony/');assert.ok(rows.length>=10,'Live HTML must contain at least ten products');assert.ok(rows.every(p=>p.price>0&&p.url.startsWith('https://vkusvill.ru/')&&p.name));console.log(JSON.stringify({liveProducts:rows.length,first:rows[0].name,unit:rows[0].unit,price:rows[0].price}));}
+fs.rmSync(dir,{recursive:true,force:true});console.log('Authorization, totals, URL validation, robots and catalog parsing checks passed');

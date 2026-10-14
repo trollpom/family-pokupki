@@ -1,0 +1,23 @@
+import ts from 'typescript';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const code=ts.transpileModule(fs.readFileSync('app/chatgpt-auth.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+let supplied=new Headers(),identityCalls=0;
+const module={exports:{}};
+new Function('require','module','exports',code)(name=>{
+  if(name==='next/headers')return {headers:async()=>supplied};
+  if(name==='next/navigation')return {redirect:path=>{throw new Error('redirect '+path);}};
+  if(name==='../lib/site-identity')return {resolveSiteIdentity:async(platformId,email)=>{identityCalls++;assert.equal(email,'visitor@example.test');return platformId||'opaque-existing-visitor';}};
+  throw new Error('Unexpected import '+name);
+},module,module.exports);
+const auth=module.exports;
+assert.equal(await auth.getChatGPTUser(),null);
+assert.equal(identityCalls,0,'Service access without visitor identity must not create an account');
+supplied=new Headers({'oai-authenticated-user-email':'visitor@example.test','oai-authenticated-user-full-name':encodeURIComponent('Посетитель'),'oai-authenticated-user-full-name-encoding':'percent-encoded-utf-8'});
+let user=await auth.getChatGPTUser();assert.equal(user.userId,'opaque-existing-visitor');assert.equal(user.fullName,'Посетитель');
+assert.equal((await auth.requireChatGPTUser('/')).userId,'opaque-existing-visitor','Authenticated email-only requests must not redirect to unavailable sign-in');
+supplied.set('oai-authenticated-user-id','site-scoped-visitor');user=await auth.getChatGPTUser();assert.equal(user.userId,'site-scoped-visitor');
+supplied.set('oai-authenticated-user-full-name','%invalid');assert.equal((await auth.getChatGPTUser()).fullName,null);
+supplied=new Headers({'oai-authenticated-user-id':'site-scoped-visitor'});assert.equal(await auth.getChatGPTUser(),null);
+assert.equal(auth.chatGPTSignInPath('https://evil.example/'),'/signin-with-chatgpt?return_to=%2F');
+console.log('Authenticated visitor without ID, canonical ID, missing identity and safe return-path checks passed');

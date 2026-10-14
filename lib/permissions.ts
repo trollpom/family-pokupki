@@ -1,0 +1,1 @@
+export function roleAllows(role:string,mode:'read'|'write'|'buy'|'owner') { if(!['owner','editor','shopper','viewer'].includes(role))return false;return mode==='read' || role==='owner' || (mode==='write' && role==='editor') || (mode==='buy' && (role==='editor'||role==='shopper')); }

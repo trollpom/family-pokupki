@@ -53,6 +53,8 @@ try {
   const created=await fetch(origin+'/api/app',{method:'POST',headers,body:JSON.stringify({action:'createList',name:'Netlify persistence test',budget:150000})});
   assert.equal(created.status,200);const {id}=await created.json();assert.ok(id);
   const planner=await fetch(origin+'/api/planner',{headers});assert.equal(planner.status,200);assert.equal((await planner.json()).ai.configured,false);
+  const masked=await fetch(origin+'/api/planner',{method:'POST',headers,body:JSON.stringify({action:'saveAI',key:'sk-****************',model:'deepseek-flash'})});
+  assert.equal(masked.status,400);const keyError=await masked.json();assert.match(keyError.error,/скрытый/);assert.ok(!keyError.error.includes('sk-****************'),'key validation never echoes credentials');
   assert.equal((await fetch(origin+'/',{headers})).status,200,'server-rendered home works with real SDK and session');
   await stop();await start();
   const restored=await fetch(origin+'/api/app',{headers});assert.equal(restored.status,200);assert.ok((await restored.json()).lists.some(list=>list.id===id),'list survives Next.js process restart');

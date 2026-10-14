@@ -9,6 +9,7 @@ import { familySchema, currentFamily, foodMap, mealNames, type PlannerState, typ
 import { buildMenu, chooseRecipe, approveSlot, makeBasket, optimizeBudget, profileProblem, eligibleOffers } from './meal-engine';
 import { sealSecret, openSecret } from './secret-box';
 import { checkDeepseekKey, generateDeepseek, replaceDeepseek, deepseekModels } from './deepseek';
+import { normalizeDeepseekKey } from './deepseek-key';
 import { stores, primaryStores } from './model';
 import type { ChatGPTUser } from '../app/chatgpt-auth';
 const now=()=>new Date().toISOString(),uid=()=>crypto.randomUUID(),id=z.string().min(1).max(100);
@@ -46,8 +47,9 @@ export async function plannerAction(user:ChatGPTUser,input:Record<string,unknown
    return {message:'Параметры семьи сохранены'};
   }
   case 'saveAI':{
-   const v=z.object({key:z.string().trim().min(20).max(500).regex(/^[A-Za-z0-9_.-]+$/),model:z.enum(deepseekModels)}).parse(input);if(!env.AI_SECRET_ENCRYPTION_KEY)throw new AppError('Защищённое хранение ключа ещё не настроено',503);
-   try{await checkDeepseekKey(v.key,v.model);}catch(error){throw new AppError(error instanceof Error?error.message:'Не удалось проверить ключ DeepSeek',400);}const encryptedKey=await sealSecret(env.AI_SECRET_ENCRYPTION_KEY,v.key,owner),checkedAt=now();
+   let key:string;try{key=normalizeDeepseekKey(input.key);}catch(error){throw new AppError(error instanceof Error?error.message:'Проверьте API-ключ DeepSeek.');}
+   const v=z.object({model:z.enum(deepseekModels)}).parse(input);if(!env.AI_SECRET_ENCRYPTION_KEY)throw new AppError('Защищённое хранение ключа ещё не настроено',503);
+   try{await checkDeepseekKey(key,v.model);}catch(error){throw new AppError(error instanceof Error?error.message:'Не удалось проверить ключ DeepSeek',400);}const encryptedKey=await sealSecret(env.AI_SECRET_ENCRYPTION_KEY,key,owner),checkedAt=now();
    await db.insert(t.aiCredentials).values({owner,encryptedKey,model:v.model,checkedAt,updatedAt:checkedAt}).onConflictDoUpdate({target:t.aiCredentials.owner,set:{encryptedKey,model:v.model,checkedAt,updatedAt:checkedAt}});return {message:'Ключ проверен и сохранён на сервере'};
   }
   case 'removeAI':{await db.delete(t.aiCredentials).where(eq(t.aiCredentials.owner,owner));return {message:'Ключ удалён из приложения'};}

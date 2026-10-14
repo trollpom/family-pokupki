@@ -57,6 +57,13 @@ try{
  const generated=await a.generateDeepseek(profile,key,'deepseek-flash',[],mock);assert.equal(generated.recipes.length,9);assert.equal(generated.outputTokens,250);assert.equal(captured.url,'https://api.deepseek.com/chat/completions');assert.equal(captured.init.headers.Authorization,'Bearer '+key);assert.ok(!captured.init.body.includes(key));assert.ok(generated.recipes.every(x=>x.origin==='deepseek'));
  await a.checkDeepseekKey(key,'deepseek-flash',async(url,init)=>{assert.equal(url,'https://api.deepseek.com/models');assert.equal(init.headers.Authorization,'Bearer '+key);assert.equal(init.body,undefined);return Response.json({data:[{id:'deepseek-flash'}]});});
  await assert.rejects(()=>a.checkDeepseekKey(key,'deepseek-flash',async()=>Response.json({data:[]})),/модель/);
+ await assert.rejects(()=>a.checkDeepseekKey(key,'deepseek-flash',async()=>new Response('{}',{status:401})),/HTTP 401/);
+ await assert.rejects(()=>a.checkDeepseekKey(key,'deepseek-flash',async()=>new Response('{}',{status:403})),/HTTP 403/);
+ await assert.rejects(()=>a.checkDeepseekKey(key,'deepseek-flash',async()=>{throw new Error('transport failed '+key);}),error=>{assert.match(error.message,/соединения/);assert.ok(!error.message.includes(key));return true;});
+ await assert.rejects(()=>a.checkDeepseekKey(key,'deepseek-flash',async()=>{throw new DOMException('timeout','TimeoutError');}),/15 секунд/);
+ await assert.rejects(()=>a.checkDeepseekKey(key,'deepseek-flash',async()=>Response.json(null)),/список моделей/);
+ await assert.rejects(()=>a.checkDeepseekKey(key,'deepseek-flash',async()=>new Response('<html>bad gateway</html>')),/некорректный ответ/);
+
  await assert.rejects(()=>a.generateDeepseek(profile,key,'deepseek-flash',[],async()=>new Response('{}',{status:402})),/средств/);
  await assert.rejects(()=>a.generateDeepseek(profile,key,'deepseek-flash',[],async()=>Response.json({choices:[{finish_reason:'length',message:{content:'{}'}}]})),/не завершил/);
  await assert.rejects(()=>a.generateDeepseek(profile,key,'deepseek-flash',[],async()=>Response.json({choices:[{finish_reason:'stop',message:{content:'{"recipes":[{"foodId":"unknown"}]}'}}]})),/не прошёл проверку/);

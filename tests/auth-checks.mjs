@@ -5,6 +5,8 @@ const code=ts.transpileModule(fs.readFileSync('app/chatgpt-auth.ts','utf8'),{com
 let supplied=new Headers(),identityCalls=0;
 const module={exports:{}};
 new Function('require','module','exports',code)(name=>{
+  if(name==='cloudflare:workers')return {env:{}};
+  if(name==='../lib/netlify-auth')return {netlifyUser:async()=>null};
   if(name==='next/headers')return {headers:async()=>supplied};
   if(name==='next/navigation')return {redirect:path=>{throw new Error('redirect '+path);}};
   if(name==='../lib/site-identity')return {resolveSiteIdentity:async(platformId,email)=>{identityCalls++;assert.equal(email,'visitor@example.test');return platformId||'opaque-existing-visitor';}};

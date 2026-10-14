@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build:netlify"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Netlify installs its maintained Next.js/OpenNext adapter automatically.
+# Do not disable it or add a static SPA catch-all redirect.

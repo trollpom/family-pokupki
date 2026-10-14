@@ -13,6 +13,8 @@
 - Проверка типов: `node node_modules/typescript/bin/tsc --noEmit`.
 - При правках логики запускайте соответствующие `tests/*-checks.mjs` и `tests/checks.mjs`; при изменении сборки или интерфейса выполняйте `npm run build`.
 - Не меняйте уже применённые SQL-миграции: добавляйте новые в `drizzle/` с согласованной схемой.
+- Для Netlify используйте `npm run build:netlify`, затем `tests/netlify-checks.mjs` и `tests/netlify-http-checks.mjs`. Правки режима Netlify сохраняйте в GitHub; не публикуйте их на Sites, если пользователь просит только Netlify. Инструкция: `docs/netlify.md`.
+- Прямые импорты `cloudflare:workers` заменяются только Next.js webpack-сборкой на `lib/netlify/runtime-env.ts`. Не подключайте Netlify SQLite/Blobs к Vite Worker-сборке.
 
 ## Данные и текущее состояние
 

@@ -61,3 +61,6 @@ next-env.d.ts
 *.sqlite
 *.sqlite3
 *.db
+
+# Netlify local state and adapter output
+/.netlify/

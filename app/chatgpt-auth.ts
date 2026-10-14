@@ -1,6 +1,8 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { resolveSiteIdentity } from "../lib/site-identity";
+import { env } from "cloudflare:workers";
+import { netlifyUser } from "../lib/netlify-auth";
 
 export type ChatGPTUser = {
   userId: string;
@@ -21,6 +23,8 @@ const CALLBACK_PATH = "/callback";
 
 export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
   const requestHeaders = await headers();
+  // Public hosting cannot trust visitor-supplied Sites identity headers.
+  if (env.APP_RUNTIME === "netlify") return netlifyUser(requestHeaders);
   const platformId = requestHeaders.get(USER_ID_HEADER);
   const email = requestHeaders.get(USER_EMAIL_HEADER);
   if (!email) return null;
@@ -51,11 +55,13 @@ export async function requireChatGPTUser(
 }
 
 export function chatGPTSignInPath(returnTo: string): string {
+  if (env.APP_RUNTIME === "netlify") return "/login";
   const safeReturnTo = safeRelativeReturnPath(returnTo);
   return `${SIGN_IN_PATH}?return_to=${encodeURIComponent(safeReturnTo)}`;
 }
 
 export function chatGPTSignOutPath(returnTo = "/"): string {
+  if (env.APP_RUNTIME === "netlify") return "/api/session";
   const safeReturnTo = safeRelativeReturnPath(returnTo);
   return `${SIGN_OUT_PATH}?return_to=${encodeURIComponent(safeReturnTo)}`;
 }

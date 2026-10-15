@@ -17,8 +17,10 @@ export function magnitSearchBody(offset:number){return {includeAdultGoods:false,
 export function parseMagnitCatalogPage(data:any,offset:number,now=new Date()):{products:CollectedProduct[];total:number;rawCount:number;signature:string;nextOffset:number|null}{
  const p=data?.pagination;
  if(!Array.isArray(data?.items)||data.items.length>pageSize||!p||p.offset!==offset||p.limit!==pageSize||!Number.isInteger(p.totalCount)||p.totalCount<0||p.totalCount>50000||typeof p.hasMore!=='boolean')throw new Error('Электронный каталог Магнита изменил формат страниц. Прежние цены сохранены.');
- const expected=Math.min(pageSize,Math.max(0,p.totalCount-offset));
- if(data.items.length!==expected||p.hasMore!==(offset+data.items.length<p.totalCount)||p.hasMore&&p.nextOffset!==offset+pageSize)throw new Error('Магнит вернул неполную страницу. Загрузка не считается завершённой.');
+ // nextOffset is a server cursor, not offset + limit. Filtered live pages
+ // can contain 17 goods and advance by 67 positions. Only hasMore ends the
+ // traversal; neither a short/empty page nor totalCount is an end marker.
+ if(p.hasMore&&(!Number.isSafeInteger(p.nextOffset)||p.nextOffset<offset+data.items.length||p.nextOffset<=offset||p.nextOffset>50000))throw new Error('Магнит вернул неверный указатель продолжения. Загрузка не считается завершённой.');
  const products:CollectedProduct[]=[];
  for(const item of data.items){
   if(item?.storeCode!==MAGNIT_STORE||item.catalogType!=='1'||item.service!=='core_mm')throw new Error('Магнит вернул товары другой витрины. Чужие цены не использованы.');
@@ -49,7 +51,7 @@ export async function advanceMagnitCatalog(request:(url:URL,body?:Record<string,
  // public catalogue route; we do not index arbitrary search-result URLs.
  const read=async(path:string,body:Record<string,unknown>)=>{const u=new URL(path,base);if(u.origin!==base.origin||!['/webgate/v1/stores-facade/store','/webgate/v2/goods/search'].includes(u.pathname))throw new Error('Неизвестный адрес каталога Магнита.');return JSON.parse(await request(u,body));};
  if(!state){const context=verifyMagnitStore(await read('/webgate/v1/stores-facade/store',{externalId:{owner:'OWNER_MAGNIT',storeCode:MAGNIT_STORE}}));state={kind:'magnit-v2',context,robots,startedAt:new Date().toISOString(),calls:0,scanned:0,total:null,catalogChanges:0,pending:[{offset:0}],signatures:[],products:[]};}
- if(state.context.store!==MAGNIT_STORE||!Array.isArray(state.pending)||state.pending.some(t=>!Number.isInteger(t.offset)||t.offset<0||t.offset%pageSize))throw new Error('Черновик Магнита не подтвердил магазин или страницы.');
+ if(state.context.store!==MAGNIT_STORE||!Array.isArray(state.pending)||state.pending.some(t=>!Number.isSafeInteger(t.offset)||t.offset<0||t.offset>50000))throw new Error('Черновик Магнита не подтвердил магазин или страницы.');
  for(let at=0;state.pending.length&&at<pageBudget;at++){
   if(state.calls>=1500)throw new Error('Каталог Магнита превысил лимит страниц. Загрузка не считается завершённой.');
   const offset=state.pending[0].offset;await new Promise(resolve=>setTimeout(resolve,2000));
@@ -63,5 +65,8 @@ export async function advanceMagnitCatalog(request:(url:URL,body?:Record<string,
  if(JSON.stringify(state).length>20000000)throw new Error('Выгрузка Магнита превышает безопасный размер.');
  const done=state.pending.length===0;
  if(done&&!state.products.length)throw new Error('Магнит не вернул доступных товаров. Прежние цены сохранены.');
+ // A resumed draft may predate a food-matching correction. Reclassify at
+ // completion so old pages receive the same rules as newly downloaded ones.
+ if(done)state.products=state.products.map(product=>{const mapped=matchCatalogFood(product.name,product.unit);return {...product,foodId:mapped?.foodId??null,packQuantity:mapped?.packQuantity??null,category:mapped?foodMap.get(mapped.foodId)!.category:'Каталог Магнит'};});
  return {snapshot:state,done,products:done?state.products:[]};
 }

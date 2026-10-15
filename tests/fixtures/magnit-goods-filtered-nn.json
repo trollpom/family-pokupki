@@ -1,0 +1,526 @@
+{
+  "pagination": {
+    "hasMore": true,
+    "limit": 34,
+    "nextOffset": 4155,
+    "offset": 4088,
+    "totalCount": 4804
+  },
+  "items": [
+    {
+      "id": "1000393524",
+      "name": "Вино Giorgio Gianni Пино Гриджио белое полусухое 12% 750мл",
+      "seoCode": "vino_giorgio_gianni_pino_gridzhio_bel_p_sukh_0_75l_italiya",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 69999,
+      "quantity": 2,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 41,
+        "endDate": "2027-01-19T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 119999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000327299",
+      "name": "Вино Хазарское красное полусладкое 12% 750мл",
+      "seoCode": "khazarskoe_vino_13_krasnoe_polusladkoe_0_75l_steklyannaya_butylka_tsimlyanskie_vina_oao_6",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 43999,
+      "quantity": 6,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 12,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 49999
+      },
+      "badges": []
+    },
+    {
+      "id": "1000319534",
+      "name": "Пиво Макарий Живое светлое нефильтрованное 4% 1л",
+      "seoCode": "pivo_makariy_zhivoe_4_1l",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 18999,
+      "quantity": 4,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-20T00:00:00Z",
+        "isPromotion": true,
+        "oldPrice": 19499
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF5858",
+          "text": "скидка от 2 шт",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000289409",
+      "name": "Вино игристое розовое сухое J. De Villaret Cremant De Loire 12% 750мл",
+      "seoCode": "j_de_villaret_vino_igristoe_12_rozovoe_sukhoe_0_75l_steklyannaya_butylka_6",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 169999,
+      "quantity": 2,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": []
+    },
+    {
+      "id": "1000446853",
+      "name": "Коньяк Избербаш Российский 3 года 40% 250мл",
+      "seoCode": "konyak_rossiysk_izberbash_3goda_40_0_25l",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 37800,
+      "quantity": 8,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": []
+    },
+    {
+      "id": "1000283639",
+      "name": "Водка Finsky Ice 40% 100мл",
+      "seoCode": "finskiy_lyed_vodka_40_0_1l_steklyannaya_butylka_salyut_alko_ooo_24",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 9999,
+      "quantity": 45,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": []
+    },
+    {
+      "id": "9790400029",
+      "name": "Вино игристое Victor Dravigny розовое брют 13% 750мл",
+      "seoCode": "vino_igristoe_premium_rozovoe_bryut_vyd_0_75l_abrau_6",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 119999,
+      "quantity": 4,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 11,
+        "endDate": "2027-01-19T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 135999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000301260",
+      "name": "Вино Las Condes Совиньон Блан белое сухое 12.3% 750мл",
+      "seoCode": "las_condes_vino_12_3_beloe_sukhoe_0_75l_steklyannaya_butylka_6",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 57999,
+      "quantity": 13,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 35,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 89999
+      },
+      "badges": []
+    },
+    {
+      "id": "1000255243",
+      "name": "Коньяк Fathers Old Barrel 5 лет 40% 250мл",
+      "seoCode": "1000255243",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 41999,
+      "quantity": 6,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-20T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": []
+    },
+    {
+      "id": "1000379645",
+      "name": "Вино игристое ЛаПетитПерле розовое полусладкое 11.5% 250мл",
+      "seoCode": "vino_igristoe_perle_rozovoe_p_sl_0_25l_zh_b_soyuz_vino",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 18999,
+      "quantity": 26,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 32,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 27999
+      },
+      "badges": []
+    },
+    {
+      "id": "1000523626",
+      "name": "Вино игристое La Petite Perle белое экстра брют 11.5% 250мл",
+      "seoCode": "vino_igristoe_lapetitperle_beloe_ekstra_bryut_0_25l_zh_b",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 18999,
+      "quantity": 108,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 32,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 27999
+      },
+      "badges": []
+    },
+    {
+      "id": "8000020183",
+      "name": "Водка Купава Мягкая 40% 700мл",
+      "seoCode": "vodka_kupava_myagkaya_40_0_7l_tatspirtprom",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 65999,
+      "quantity": 6,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 22,
+        "endDate": "2026-10-20T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 84999
+      },
+      "badges": []
+    },
+    {
+      "id": "8000031082",
+      "name": "Водка Алтай 40% 700мл",
+      "seoCode": "vodka_altay_0_7l_40_tatspirtprom",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 79999,
+      "quantity": 17,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 20,
+        "endDate": "2026-10-20T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 99999
+      },
+      "badges": []
+    },
+    {
+      "id": "9755800015",
+      "name": "Вино игристое Martini Prosecco белое сухое 11.5% 750мл",
+      "seoCode": "vino_igristoe_martini_prosekko_bel_sukh_0_75l_italiya_6",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 159999,
+      "quantity": 3,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 20,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 199999
+      },
+      "badges": []
+    },
+    {
+      "id": "1000443477",
+      "name": "Плодовая алкогольная продукция Армения гранат красная полусладкая 12% 750мл",
+      "seoCode": "plod_alk_prod_armeniya_granat_kras_p_sl_0_75l_armeniya",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 49999,
+      "quantity": 3,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 25,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 66999
+      },
+      "badges": []
+    },
+    {
+      "id": "1000274529",
+      "name": "Вино Алиготе Ркацители к рыбе белое сухое 12.5% 750мл",
+      "seoCode": "vino_aligote_rkatsiteli_k_rybe_beloe_sukhoe_12_5_750ml",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 56999,
+      "quantity": 7,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 21,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 72999
+      },
+      "badges": []
+    },
+    {
+      "id": "1000575590",
+      "name": "Вино Mucho Mas белое полусухое 12.5% 750мл",
+      "seoCode": "vino_mucho_mas_beloe_polusukhoe_0_75l_ispaniya",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": true,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 129999,
+      "quantity": 5,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 18,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 159999
+      },
+      "badges": []
+    }
+  ]
+}

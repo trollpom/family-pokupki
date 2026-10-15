@@ -1,0 +1,1276 @@
+{
+  "pagination": {
+    "hasMore": true,
+    "limit": 34,
+    "nextOffset": 1565,
+    "offset": 1530,
+    "totalCount": 4804
+  },
+  "items": [
+    {
+      "id": "1000324078",
+      "name": "Пюре Дары Кубани Яблоко банан печенье с 6 месяцев 90г",
+      "seoCode": "dary_kubani_pyure_yabl_ban_pechene_s_6mes_90g_doy_pak_ooo_yuzhnaya_sokovaya_kompaniya_6",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 3299,
+      "quantity": 17,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2027-01-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ]
+    },
+    {
+      "id": "1000567799",
+      "name": "Сыр Oldenburger с грецкими орехами нарезка 45% 125г",
+      "seoCode": "oldenburger_syr_s_grets_orekhami_45_125g_lotok_bobrovskiy",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 12999,
+      "quantity": 5,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 16,
+        "endDate": "2026-10-20T00:00:00Z",
+        "isPromotion": true,
+        "oldPrice": 15499
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "от 2 шт по карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000546167",
+      "name": "Пищевой краситель Dr Bakers желтый 5мл",
+      "seoCode": "dr_bakers_pishchevoy_krasitel_zheltyy_5ml",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 999,
+      "quantity": 4,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 72,
+        "endDate": "2026-10-12T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 3699
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000226593",
+      "name": "Светлое пиво фильтрованное безалкогольное Bud 450мл",
+      "seoCode": "pivo_bud_bezalkogolnoe_0_5_0_45l",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 6499,
+      "quantity": 22,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-12-07T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": []
+    },
+    {
+      "id": "4000090713",
+      "name": "Батарейки Gigacel/Магнит алкалиновые ААА 10шт",
+      "seoCode": "magnit_batareyki_alkalin_aaa_10sht_si",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 28999,
+      "quantity": 4,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000232485",
+      "name": "Чистящее средство для посудомоечных машин Сомат Интенсивный очиститель 250мл",
+      "seoCode": "somat_chistyashchee_sredstvo_dlya_pmm_intensiv_250ml_khenkel_8",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 34999,
+      "quantity": 5,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 22,
+        "endDate": "2026-11-03T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 44999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000090904",
+      "name": "Смесь на бумаге для нежного филе куриной грудки с чесноком и травами Maggi На Второе 30.6г",
+      "seoCode": "maggi_na_vtoroe_kuritsa_s_chesn_trav30_6g_nestle_28",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 8499,
+      "quantity": 14,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 29,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 11999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000172016",
+      "name": "Салфетки влажные La Fresh антибактериальные 15шт",
+      "seoCode": "vlazhnye_salfetki_la_fresh_antibakterialnye_15sht",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 2999,
+      "quantity": 38,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ]
+    },
+    {
+      "id": "1000154617",
+      "name": "Компот вишнево-малиновый с 5 месяцев Фрутоняня 200мл",
+      "seoCode": "kompot_frutonyanya_vishnya_i_malina_200ml",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 4499,
+      "quantity": 15,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2027-01-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ]
+    },
+    {
+      "id": "1000175993",
+      "name": "Конфеты Красный октябрь Золотое собрание вкусов 250г",
+      "seoCode": "konfety_rot_front_zolotoe_sobranie_vkusov_250g",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 19999,
+      "quantity": 4,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 33,
+        "endDate": "2026-12-15T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 29999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000367294",
+      "name": "Жидкость от комаров 30 ночей М Нужные Вещи 30мл",
+      "seoCode": "magnit_nuzhnye_veshchi_sredstvo_insektitsidnoe_30ml_flakon_grinfild_rus_ooo_12",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 9999,
+      "quantity": 27,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-12-02T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ]
+    },
+    {
+      "id": "1000400185",
+      "name": "Сок Дары Кубани Яблочно-шиповниковый 125мл",
+      "seoCode": "dary_kubani_sok_yablochno_shipovnikovyy_125ml_t_pak",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 2099,
+      "quantity": 37,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2027-01-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": []
+    },
+    {
+      "id": "3324150038",
+      "name": "Пресервы Золотая Fishka Рыба Хе по-корейски 180г",
+      "seoCode": "zolotaya_fishka_ryba_khe_f_kus_mas_pryan_khe_po_koreyski_180g_6",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 14999,
+      "quantity": 5,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-12-31T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000208024",
+      "name": "Перец Моя цена черный горошком 20г",
+      "seoCode": "perets_chernyy_goroshkom_moya_tsena_20g",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 2499,
+      "quantity": 66,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 24,
+        "endDate": "2026-10-28T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 3299
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#FFEBC4",
+          "text": "Создали для вас",
+          "textColor": "#BD4F01"
+        }
+      ]
+    },
+    {
+      "id": "1000245989",
+      "name": "Мини-рулеты сгущенка Lucky Days 175г",
+      "seoCode": "mini_rulety_lucky_days_sgushchenka_175g",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 7999,
+      "quantity": 18,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 22,
+        "endDate": "2027-09-07T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 10299
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#FFEBC4",
+          "text": "Создали для вас",
+          "textColor": "#BD4F01"
+        }
+      ]
+    },
+    {
+      "id": "1000235861",
+      "name": "Гель для мытья посуды Aos Бальзам/Лимон 450г в ассортименте",
+      "seoCode": "sredstvo-dlya-mytya-posudy-aos-balzam-limon-450g",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 10999,
+      "quantity": 47,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 31,
+        "endDate": "2026-10-13T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 15999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#D6FFAE",
+          "text": "Разные ароматы",
+          "textColor": "#3B5803"
+        }
+      ]
+    },
+    {
+      "id": "8000041124",
+      "name": "Чайный напиток Greenfield Strawberry Garden 25пак",
+      "seoCode": "greenfield_chaynyy_napitok_strawberry_garden_25pak_k_up",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 8999,
+      "quantity": 7,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 40,
+        "endDate": "2026-10-13T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 14999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000429196",
+      "name": "Колбаса Моя цена Краинская полукопченая 300г",
+      "seoCode": "moya_tsena_kolbasa_krainskaya_p_k_300g_p_o",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 7599,
+      "quantity": 7,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-21T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ]
+    },
+    {
+      "id": "1000172855",
+      "name": "Мороженое Золотой Стандарт пломбир с таежной черникой в вафельном стаканчике 93г",
+      "seoCode": "zolotoy_standart_morozhennoe_plombir_chernika_vafelnyy_stakanchik_89g_floupak_yunilever_rus_24",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 9999,
+      "quantity": 26,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ]
+    },
+    {
+      "id": "1000201839",
+      "name": "Пюре из говядины с овощами с 8 месяцев Фрутоняня 100г",
+      "seoCode": "pyure_myasnoe_frutonyanya_govyadina_s_ovoshchami_100g",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 9599,
+      "quantity": 8,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ]
+    },
+    {
+      "id": "4000098434",
+      "name": "Венчик Wellfort Basic стальной",
+      "seoCode": "venchik_stalnoy_wellfort_si",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 15999,
+      "quantity": 4,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ]
+    },
+    {
+      "id": "1000448928",
+      "name": "Шарики шоколадные для завтрака Хрутка Duo 650г",
+      "seoCode": "khrutka_duo_shariki_obog_kaltsiem_650g_f_p_sirial_parters",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 26999,
+      "quantity": 14,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 38,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 43999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000175966",
+      "name": "Паштет Магнит печеночный 250г",
+      "seoCode": "pashtet_pechenochnyy_mikhaylov_kuren_250g",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 8399,
+      "quantity": 2,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 32,
+        "endDate": "2027-09-07T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 12399
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ]
+    },
+    {
+      "id": "1000098841",
+      "name": "Блинчики С пылу с жару без начинки 360г",
+      "seoCode": "blinchiki_s_pylu_s_zharu_bez_nachinki_360g",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 14999,
+      "quantity": 7,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "1 + 1 по карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ]
+    },
+    {
+      "id": "3412080031",
+      "name": "Лук белый",
+      "seoCode": "luk_belyy",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 5999,
+      "quantity": 1676,
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "400г",
+        "shelfWeight": 400,
+        "step": 400,
+        "unitLabel": "1кг",
+        "unitPrice": 14999
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": []
+    },
+    {
+      "id": "1000299851",
+      "name": "Смесь молочная Nutrilak Premium 1 с рождения 600г",
+      "seoCode": "nutrilak_smes_premium_1_s_rozhdeniya_sukh_mol_s_rozh_600g_kartonnaya_upakovka_infaprim_zao_6",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 69999,
+      "quantity": 3,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2027-01-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ]
+    },
+    {
+      "id": "1000331334",
+      "name": "Прокладки Kotex Ultra Ночные 14шт",
+      "seoCode": "koteks_prokladki_9425973_kriticheskie_krylyshki_b_z_0_134kg_polietilenovaya_upakovka_ooo_kimberli_kl",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 27499,
+      "quantity": 9,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 19,
+        "endDate": "2026-10-13T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 33999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "4000001724",
+      "name": "Липкий ролик Wellfort в ассортименте",
+      "seoCode": "lipkiy_rolik_tsveta_v_assort_sl_si_12_96",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 13399,
+      "quantity": 25,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ]
+    },
+    {
+      "id": "8000025494",
+      "name": "Шпикачки Золото Дэмки Пикник 380г",
+      "seoCode": "zoloto_demki_shpikachki_piknik_katv_0_38kg_mgs",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 19999,
+      "quantity": 8,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 42,
+        "endDate": "2026-11-03T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 34999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000322356",
+      "name": "Печенье Хлебный спас Мультизлаковое с начинкой Яблоко и корица 250г",
+      "seoCode": "khlebnyy_spas_pechene_multizlakovoe_yabloko_koritsa_250g_floupak_dial_k_10",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 10999,
+      "quantity": 8,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 35,
+        "endDate": "2027-01-12T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 16999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "id": "1000287401",
+      "name": "Гренки Фишка Альпийская сметана с луком 120г",
+      "seoCode": "grenki_fishka_alpiyskaya_smetana_i_luk_120g",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 8499,
+      "quantity": 6,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ]
+    },
+    {
+      "id": "1000563494",
+      "name": "Печенье без добавления сахара 215г",
+      "seoCode": "pechene_diabeticheskoe_bez_sakhara_215g_fl_p",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 7999,
+      "quantity": 3,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 27,
+        "endDate": "2027-01-12T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 10999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FFEBC4",
+          "text": "Создали для вас",
+          "textColor": "#BD4F01"
+        }
+      ]
+    },
+    {
+      "id": "1000559783",
+      "name": "Варенье брусничное 330г",
+      "seoCode": "varene_brusnichnoe_330g_st_b_igra_pro",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 17999,
+      "quantity": 10,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": 18,
+        "endDate": "2027-09-07T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 21999
+      },
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ]
+    },
+    {
+      "id": "1000295005",
+      "name": "Чистящее средство Grass Gloss для сантехники 600мл",
+      "seoCode": "grass_chistyashchie_sredstva_221600_606ml_plastikovaya_butylka_ooo_td_grass_12",
+      "storeCode": "522856",
+      "catalogType": "1",
+      "service": "core_mm",
+      "isForAdults": false,
+      "isBiometryRequired": false,
+      "needPassport": false,
+      "price": 17499,
+      "quantity": 4,
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      },
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-12-08T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ]
+    }
+  ]
+}

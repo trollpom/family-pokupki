@@ -5,6 +5,8 @@ import * as t from '../db/schema';
 import { builtinRecipes, type State, type Recipe } from './model';
 import { collect, validateSourceUrl, download, robotsAllows } from './collector';
 import { advanceSmartCatalog, type SmartSnapshot } from './smart-catalog';
+import { advanceSparSearch, type SparSnapshot } from './spar-search';
+import { advanceMagnitCatalog, type MagnitSnapshot } from './magnit-catalog';
 import { roleAllows } from './permissions';
 import { regionalCatalogs, regionalSource, officialCatalogs, officialSource } from './catalog-prices';
 import type { ChatGPTUser } from '../app/chatgpt-auth';
@@ -13,7 +15,9 @@ const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(v=>!Number.isNaN(Date.
 const itemInput=z.object({name:str,quantity:z.number().min(0.001).max(100000),unit:z.enum(['шт','кг','г','л','мл','уп']),price:cents.nullable().default(null),category:str.default('Продукты'),note:z.string().max(1000).default(''),important:z.number().int().min(0).max(1).default(0),barcode:z.string().regex(/^\d{8,14}$/).nullable().optional(),store:z.string().max(100).nullable().optional(),sourceUrl:z.string().url().max(1500).nullable().optional()});
 const now=()=>new Date().toISOString(),uid=()=>crypto.randomUUID();
 export const SHARED_CATALOG_OWNER='site-catalog';
-export async function ensureCatalogSource(){const db=getDb(),rows=[{id:'vkusvill-makarony',owner:SHARED_CATALOG_OWNER,store:'vkusvill',city:'Регион не подтверждён',url:'https://vkusvill.ru/goods/krupy-makarony-muka/makarony/'},...[...officialCatalogs,...regionalCatalogs].map(s=>({...s,owner:SHARED_CATALOG_OWNER}))],ops:any[]=[];for(let i=0;i<rows.length;i+=10)ops.push(db.insert(t.sources).values(rows.slice(i,i+10)).onConflictDoNothing());ops.push(db.update(t.sources).set({url:'https://www.perekrestok.ru/cat',lastAttempt:null,status:'waiting',message:'Проверяем официальный электронный каталог товаров'}).where(and(eq(t.sources.id,'nn-official-perekrestok'),eq(t.sources.owner,SHARED_CATALOG_OWNER),eq(t.sources.url,'https://www.perekrestok.ru/booklets/niznij-novgorod'))));await db.batch(ops as any);}
+export async function ensureCatalogSource(){const db=getDb(),rows=[{id:'vkusvill-makarony',owner:SHARED_CATALOG_OWNER,store:'vkusvill',city:'Регион не подтверждён',url:'https://vkusvill.ru/goods/krupy-makarony-muka/makarony/'},...[...officialCatalogs,...regionalCatalogs].map(s=>({...s,owner:SHARED_CATALOG_OWNER}))],ops:any[]=[];for(let i=0;i<rows.length;i+=10)ops.push(db.insert(t.sources).values(rows.slice(i,i+10)).onConflictDoNothing());ops.push(db.update(t.sources).set({url:'https://www.perekrestok.ru/cat',lastAttempt:null,status:'waiting',message:'Проверяем официальный электронный каталог товаров'}).where(and(eq(t.sources.id,'nn-official-perekrestok'),eq(t.sources.owner,SHARED_CATALOG_OWNER),eq(t.sources.url,'https://www.perekrestok.ru/booklets/niznij-novgorod'))));ops.push(db.update(t.sources).set({url:'https://magnit.ru/categories',lastAttempt:null,status:'waiting',message:'Подключаем полный электронный каталог Магнита, Ленина, 50'}).where(and(eq(t.sources.id,'nn-official-magnit'),eq(t.sources.url,'https://magnit.ru/promo-catalog?shopCode=520011'))));
+for(const sourceId of ['nn-official-spar','nn-official-smart'])ops.push(db.update(t.sources).set({lastAttempt:null,status:'waiting',message:'Загружаем расширенный каталог по всем страницам; прежние цены сохранены'}).where(and(eq(t.sources.id,sourceId),eq(t.sources.status,'ok'),sql`${t.sources.message} not like '%Просмотрено:%'`)));
+await db.batch(ops as any);}
 async function hash(value:string){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value)))).map(v=>v.toString(16).padStart(2,'0')).join('');}
 export class AppError extends Error { constructor(message:string,public status=400){super(message);} }
 async function listAccess(listId:string,user:string,mode:'read'|'write'|'buy'|'owner'='write') {
@@ -37,17 +41,20 @@ export async function getState(user:ChatGPTUser):Promise<State> {
 }
 export async function syncSource(sourceId:string,userId:string,automatic=false) {
   const db=getDb();const source=(await db.select().from(t.sources).where(and(eq(t.sources.id,sourceId),or(eq(t.sources.owner,userId),eq(t.sources.owner,SHARED_CATALOG_OWNER)))))[0];if(!source||!source.enabled)throw new AppError('Источник не найден',404);
-  const resumable=source.store==='smart'&&!!officialSource(source.url,source.store),threshold=Date.now()-(automatic?6*3600000:60000);
+  const resumable=['smart','spar','magnit'].includes(source.store)&&!!officialSource(source.url,source.store),threshold=Date.now()-(automatic?6*3600000:60000);
   const resumableLease=resumable?or(eq(t.sources.status,'continuing'),and(eq(t.sources.status,'syncing'),sql`${t.sources.lastAttempt} < ${new Date(Date.now()-120000).toISOString()}`)):sql`0`;
   const acquired=await db.update(t.sources).set({lastAttempt:now(),status:'syncing',message:'Обновляем каталог…'}).where(and(eq(t.sources.id,source.id),or(sql`${t.sources.lastAttempt} is null`,sql`${t.sources.lastAttempt} < ${new Date(threshold).toISOString()}`,resumableLease))).returning();
   if(!acquired.length)return {message:'Каталог уже обновляется или недавно проверен'};
+  let completedDetails='',savedJob:typeof t.catalogJobs.$inferSelect|undefined;
   try{let rows;
     if(resumable){
-      const job=(await db.select().from(t.catalogJobs).where(eq(t.catalogJobs.sourceId,source.id)))[0],previous=job?JSON.parse(job.data) as SmartSnapshot:undefined;
-      const result=await advanceSmartCatalog((u,body)=>download(u,false,body),robotsAllows,previous);
-      if(!result.done){const snapshot=result.snapshot,message=`Смарт · Федосеенко, 44А: каталог читается, обработано страниц ${snapshot.calls-3}, осталось ${snapshot.pending.length}. Прежние цены действуют до завершения.`;
+      savedJob=(await db.select().from(t.catalogJobs).where(eq(t.catalogJobs.sourceId,source.id)))[0];
+      const previous=savedJob?JSON.parse(savedJob.data):undefined;
+      const result=source.store==='spar'?await advanceSparSearch(download,robotsAllows,previous as SparSnapshot|undefined):source.store==='magnit'?await advanceMagnitCatalog((u,body)=>download(u,false,body),robotsAllows,previous as MagnitSnapshot|undefined):await advanceSmartCatalog((u,body)=>download(u,false,body),robotsAllows,previous as SmartSnapshot|undefined);
+      const label=source.store==='spar'?'SPAR · поиск всех ингредиентов':source.store==='magnit'?'Магнит · полный каталог, Ленина, 50':'Смарт · полный каталог, Федосеенко, 44А';
+      if(!result.done){const snapshot={...result.snapshot,failures:0},message=`${label}: просмотрено ${snapshot.scanned} товаров; страниц в очереди: ${snapshot.pending.length}. Прежние цены действуют до завершения.`;
         await db.batch([db.insert(t.catalogJobs).values({sourceId:source.id,data:JSON.stringify(snapshot),startedAt:snapshot.startedAt,updatedAt:now()}).onConflictDoUpdate({target:t.catalogJobs.sourceId,set:{data:JSON.stringify(snapshot),updatedAt:now()}}),db.update(t.sources).set({status:'continuing',message}).where(eq(t.sources.id,source.id))]);return {message,continuing:true};}
-      rows=result.products;
+      rows=result.products;completedDetails=` · ${label}. Просмотрено: ${result.snapshot.scanned}; страниц: ${result.snapshot.calls}${result.snapshot.kind==='smart-v2'?`; категорий: ${Object.keys(result.snapshot.categories).length}`:''}${'catalogChanges' in result.snapshot&&result.snapshot.catalogChanges?`; обновлений ассортимента при чтении: ${result.snapshot.catalogChanges}`:''}`;
     }else rows=await collect(source.store,source.url);
     const updatedAt=now();const hashes=await Promise.all(rows.map(p=>hash(p.url+'|'+p.name)));
     const values=rows.map((p,index)=>({id:source.id+':'+hashes[index],owner:source.owner,sourceId:source.id,store:source.store,city:(officialSource(source.url,source.store)||regionalSource(source.url,source.store))?.city||source.city,...p,updatedAt}));
@@ -55,8 +62,13 @@ export async function syncSource(sourceId:string,userId:string,automatic=false) 
     const patch=Object.fromEntries(fields.map(k=>[k,sql.raw('excluded.'+t.products[k].name)]));const ops:any[]=[];
     for(let i=0;i<values.length;i+=3)ops.push(db.insert(t.products).values(values.slice(i,i+3)).onConflictDoUpdate({target:t.products.id,set:patch}));
     if(resumable)ops.push(db.delete(t.catalogJobs).where(eq(t.catalogJobs.sourceId,source.id)));
-    ops.push(db.delete(t.products).where(and(eq(t.products.sourceId,source.id),sql`${t.products.updatedAt} <> ${updatedAt}`)),db.update(t.sources).set({lastSuccess:updatedAt,status:'ok',message:`Обновлено товаров: ${rows.length}${resumable?' · Смарт, Федосеенко, 44А':''}`}).where(eq(t.sources.id,source.id)));await db.batch(ops as any);return {message:`Каталог обновлён: ${rows.length} товаров`};
-  }catch(error){const message=error instanceof Error?error.message:'Не удалось обновить каталог';const ops:any[]=[db.update(t.sources).set({status:'error',message:message.slice(0,350)}).where(eq(t.sources.id,source.id))];if(resumable)ops.push(db.delete(t.catalogJobs).where(eq(t.catalogJobs.sourceId,source.id)));await db.batch(ops as any);return {message};}
+    ops.push(db.delete(t.products).where(and(eq(t.products.sourceId,source.id),sql`${t.products.updatedAt} <> ${updatedAt}`)),db.update(t.sources).set({lastSuccess:updatedAt,status:'ok',message:`Обновлено товаров: ${rows.length}${completedDetails}`}).where(eq(t.sources.id,source.id)));await db.batch(ops as any);return {message:`Каталог обновлён: ${rows.length} товаров`};
+  }catch(error){const message=error instanceof Error?error.message:'Не удалось обновить каталог';
+    const temporary=error instanceof Error&&(/Timeout|Abort|timed out|HTTP 50[0234]/i.test(error.name+' '+error.message));
+    const previous=savedJob?JSON.parse(savedJob.data):null,failures=Number(previous?.failures||0)+1,continuing=!!previous&&temporary&&failures<=2;
+    const ops:any[]=[db.update(t.sources).set({status:continuing?'continuing':'error',message:(message+(previous?' Прогресс загрузки и прежние цены сохранены.':'')).slice(0,350)}).where(eq(t.sources.id,source.id))];
+    if(previous)ops.push(db.update(t.catalogJobs).set({data:JSON.stringify({...previous,failures}),updatedAt:now()}).where(eq(t.catalogJobs.sourceId,source.id)));
+    await db.batch(ops as any);return {message,...(continuing?{continuing:true}:{})};}
 }
 export async function act(user:ChatGPTUser,input:Record<string,unknown>):Promise<Record<string,unknown>> {
   const db=getDb(),userId=user.userId;

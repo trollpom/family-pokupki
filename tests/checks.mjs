@@ -5,7 +5,7 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 const dir=fs.mkdtempSync(path.resolve('node_modules/.sobrano-checks-'));
-for(const name of ['model','official-catalogs','spar-search','smart-catalog','collector','permissions','catalog-prices','meal-model'])fs.writeFileSync(path.join(dir,name+'.js'),ts.transpileModule(fs.readFileSync('lib/'+name+'.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText);
+for(const name of ['model','official-catalogs','spar-search','smart-catalog','magnit-catalog','collector','permissions','catalog-prices','meal-model'])fs.writeFileSync(path.join(dir,name+'.js'),ts.transpileModule(fs.readFileSync('lib/'+name+'.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText);
 const require=createRequire(import.meta.url),collector=require(path.join(dir,'collector.js')),model=require(path.join(dir,'model.js')),permissions=require(path.join(dir,'permissions.js'));
 assert.equal(permissions.roleAllows('viewer','write'),false);assert.equal(permissions.roleAllows('shopper','write'),false);assert.equal(permissions.roleAllows('shopper','buy'),true);assert.equal(permissions.roleAllows('editor','owner'),false);assert.equal(permissions.roleAllows('owner','owner'),true);
 assert.equal(model.listTotal([{price:9999,quantity:2},{price:null,quantity:1},{price:12000,quantity:.5}]),25998);

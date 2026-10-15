@@ -3,6 +3,7 @@ import { regionalSource, officialSource, matchCatalogFood } from './catalog-pric
 import { parseOfficialCatalog } from './official-catalogs';
 import { collectSparSearch } from './spar-search';
 import { collectSmartCatalog } from './smart-catalog';
+import { advanceMagnitCatalog, type MagnitSnapshot } from './magnit-catalog';
 import { foodMap } from './meal-model';
 export type CollectedProduct = { name: string; price: number; unit: string; barcode: string|null; image: string|null; url: string; category: string; foodId?:string|null; packQuantity?:number|null; regularPrice?:number|null; minPacks?:number; minQuantity?:number|null; quantityStep?:number|null; loyaltyRequired?:number; validFrom?:string|null; validTo?:string|null; priceKind?:string; regionVerified?:number };
 type Json = Record<string, any>;
@@ -55,7 +56,7 @@ export function parseProducts(html: string, pageUrl: string): CollectedProduct[]
   return [...unique.values()].slice(0,200);
 }
 export async function download(url: URL,missingRobots=false,body?:Record<string,unknown>): Promise<string> {
-  const response=await fetch(url.href,{method:body?'POST':'GET',body:body?JSON.stringify(body):undefined,redirect:'manual',signal:AbortSignal.timeout(15000),headers:{'User-Agent':'PokupkiPersonal/1.0 (+catalog indexing; no login)','Accept':'application/json,text/html,application/ld+json',...(body?{'Content-Type':'application/json'}:{})}});
+  const response=await fetch(url.href,{method:body?'POST':'GET',body:body?JSON.stringify(body):undefined,redirect:'manual',signal:AbortSignal.timeout(15000),headers:{'User-Agent':'PokupkiPersonal/1.0 (+catalog indexing; no login)','Accept':'application/json,text/html,application/ld+json',...(body?{'Content-Type':'application/json'}:{}),...(url.hostname==='magnit.ru'&&url.pathname.startsWith('/webgate/')?{'X-Device-Platform':'Web','X-Client-Name':'magnit','X-New-Magnit':'true'}:{})}});
   if(response.status>=300 && response.status<400) throw new Error('Источник перенаправляет запрос. Укажите конечный адрес страницы.');
   if([401,403,429].includes(response.status)) throw new Error(`Официальный источник ${url.hostname} ограничил доступ (HTTP ${response.status}). Прежние цены сохранены.`);
   if(missingRobots&&url.pathname==='/robots.txt'&&response.status===404)return '';
@@ -77,6 +78,7 @@ export async function collect(storeId:string,rawUrl:string):Promise<CollectedPro
   const url=validateSourceUrl(rawUrl,storeId);
   if(storeId==='spar'&&officialSource(rawUrl,storeId))return collectSparSearch(download,robotsAllows);
   if(storeId==='smart'&&officialSource(rawUrl,storeId))return collectSmartCatalog((u,body)=>download(u,false,body),robotsAllows);
+  if(storeId==='magnit'&&officialSource(rawUrl,storeId)){let snapshot:MagnitSnapshot|undefined;for(;;){const result=await advanceMagnitCatalog((u,body)=>download(u,false,body),robotsAllows,snapshot);if(result.done)return result.products;snapshot=result.snapshot;}}
   const robotsUrl=new URL('/robots.txt',url);let robots:string;
   try { robots=await download(robotsUrl); } catch(error) { throw new Error('Не удалось проверить robots.txt. '+(error instanceof Error?error.message:'Обновление отложено.')); }
   if(!robotsAllows(robots,url.pathname+url.search)) throw new Error('Правила магазина запрещают сбор этой страницы.');

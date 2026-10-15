@@ -1,3 +1,4 @@
+import * as catalogJobAuth from '../lib/catalog-job-auth.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -81,6 +82,7 @@ try {
       if(name==='cloudflare:workers')return {env:{APP_RUNTIME:'netlify'}};
       if(name==='../../chatgpt-auth')return {getChatGPTUser:async()=>null};
       if(name==='../../../lib/request-origin')return originCheck;
+      if(name==='../../../lib/catalog-job-auth.mjs')return catalogJobAuth;
       if(name==='drizzle-orm')return require(name);
       return {};
     },catalog,catalog.exports);

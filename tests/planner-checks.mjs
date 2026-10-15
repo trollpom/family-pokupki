@@ -38,9 +38,13 @@ try{
  assert.equal(e.makeBasket(more,[offer({packQuantity:1000,price:49990,variableWeight:true,minQuantity:500,quantityStep:100})],when).rows[0].packs,.6,'560 grams rounds to the next 100 gram step');
  assert.equal(e.makeBasket(short,[offer({packQuantity:1000,price:6990,variableWeight:true,minQuantity:3500,quantityStep:3500})],when).knownCost,24465,'a 3.5kg prepacked bag cannot be purchased by the gram');
  assert.equal(e.makeBasket({...short,startDate:'2026-10-18'},[offer({validTo:'2026-10-18'})],when).missing,1,'expired promotion cannot enter an older saved menu');
+ assert.equal(e.makeBasket(short,[offer({loyaltyRequired:1,regularPrice:13000})],when).knownCost,13000,'known ordinary price remains available without a card');
+ assert.equal(e.makeBasket({...short,profile:{...short.profile,loyaltyStores:['5ka']}},[offer({loyaltyRequired:1,regularPrice:13000})],when).knownCost,10000,'card holder receives the card price');
  assert.equal(e.makeBasket(short,[offer({loyaltyRequired:1})],when).missing,1);assert.equal(e.makeBasket({...short,profile:{...short.profile,loyaltyStores:['5ka']}},[offer({loyaltyRequired:1})],when).missing,0);
  for(const o of [offer({city:'Москва'}),offer({disabled:1}),offer({verifiedAt:'2026-10-16T00:00:00Z'}),offer({validFrom:'2026-10-20'}),offer({validTo:'2026-10-18'}),offer({store:'metro'})])assert.equal(e.makeBasket(short,[o],when).missing,1);
  assert.equal(e.makeBasket({...short,profile:vegan},[offer({compositionConfirmed:0})],when).missing,1);
+ const forcedStore=e.makeBasket({...short,shoppingStore:'5ka'},[offer(),offer({store:'spar',price:1000})],when);assert.deepEqual(forcedStore.stores,['5ka']);assert.equal(forcedStore.knownCost,10000);assert.throws(()=>e.makeBasket({...short,shoppingStore:'outside-profile'},[],when),/магазин/);
+ assert.equal(e.basketQuoteMatrix(short,[offer({loyaltyRequired:1})],when)[0].stores.find(s=>s.store==='5ka').reason,'Нужна карта');
  const unknown=e.makeBasket(short,[],when);assert.equal(unknown.knownCost,0);assert.equal(unknown.budgetStatus,'unknown');assert.equal(unknown.coverage,0);assert.equal(e.optimizeBudget(short,[],when).changed,0);
  const two={...short,profile:{...short.profile,maxStores:1},groups:[{...short.groups[0],options:[{...simpleRecipe,ingredients:[{foodId:'rice',quantity:100},{foodId:'potato',quantity:100}]}]}]};
  const offers=[offer(),offer({foodId:'potato',store:'magnit',price:5000}),offer({foodId:'potato',price:20000})];assert.equal(e.makeBasket(two,offers,when).stores.length,1);assert.equal(e.makeBasket(two,offers,when).knownCost,30000);

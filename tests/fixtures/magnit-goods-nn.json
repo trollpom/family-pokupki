@@ -1,0 +1,2443 @@
+{
+  "category": null,
+  "containerConfig": {
+    "media": {
+      "backgroundColor": "#FFF5F5F5",
+      "cornerRadius": 12
+    }
+  },
+  "correctedTerm": null,
+  "fastCategories": [],
+  "items": [
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/1jM8sMxEuJqvfROn08_gw8YGfCOTa_WOtrfhmdm_JJ8/rs:fit:416:416/plain/s3://img-dostavka/uf/bd4/bd43eaeb6617cf495cfacfad5e9ddf58/0ae360805c9678acbebefd9c4a3075c5.jpeg@webp"
+        }
+      ],
+      "id": "1000567279",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "М Здоровье Витамин С 900 таблетки шипучие 20шт",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 16499,
+      "productId": "1000567279",
+      "promotion": {
+        "discountPercent": 17,
+        "endDate": "2026-11-03T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 19999
+      },
+      "quantity": 0,
+      "ratings": {
+        "commentsCount": 67,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 1143
+      },
+      "seoCode": "magnit_zdorove_bad_vitamin_s_900_21",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/DnCK-imSDcZT7NVqivsazvPtMmAfix0LSPNmagw8Mds/rs:fit:416:416/plain/s3://img-dostavka/uf/6f9/6f984c40e19b2bb8364a9e8b5e453a32/4a99ef36c44878e6b1959138edbc041e.png@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/wqudiHLYfKAE6X9WSxSeQITeaY1iDcK3HAMu5HSkFAc/rs:fit:416:416/plain/s3://img-dostavka/uf/e91/e91899fe10f4d94e956e663fa097d9a0/c908a20f1b4387aa4ffaf5fd5989563f.png@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/XOFPD-bSIJrT_MGEDDeGiXmpzjo1YwzpqegaaFS8Zlg/rs:fit:416:416/plain/s3://img-dostavka/uf/938/938eb9cb044430eefebe49a68d16c13d/24c9f67b0746e6ff6f54553f6b6bb42e.png@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/nlx1I3xPNMNnTh3zPpAYGYOe7nUPTPjPuNbmIDYxe80/rs:fit:416:416/plain/s3://img-dostavka/uf/7a0/7a0da75efbf6ed73d4cffb3e10591a83/40796620a402b94d49d1a26bb8b80cb9.png@webp"
+        }
+      ],
+      "id": "1000532305",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "М Здоровье Аскорбиновая кислота таблетки жевательные 25мг 10шт в ассортименте",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 1899,
+      "productId": "1000532305",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 74,
+      "ratings": {
+        "commentsCount": 146,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 2577
+      },
+      "seoCode": "magnit_zdorove_askorbin_k_ta_krutka_assorti_25mg_10",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/5TVM5pfSjIjvrHMSpKeDkMTnzazphDdYaKJKBv0DhFI/rs:fit:416:416/plain/s3://img-dostavka/uf/fa2/fa2f2f5eea2a51a6b0c92e54fe394e06/0dfa38fbf5a15cc1f31ef053527072ea.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/tnOm1Be4URtR_NkZdMPFDoSrK_G6Yxy_vLj8LLwSXH4/rs:fit:416:416/plain/s3://img-dostavka/uf/b7e/b7ed29bd716af8385b4ca86dcdf8cbfe/bde1dfe432c78fcbf2c10ff107ddbe84.jpeg@webp"
+        }
+      ],
+      "id": "3132360213",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Сода пищевая 500г в ассортименте",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 4199,
+      "productId": "3132360213",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 19,
+      "ratings": {
+        "commentsCount": 341,
+        "external": null,
+        "rating": 5,
+        "scoresCount": 12110
+      },
+      "seoCode": "soda_pishchevaya_500g",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/WgsTOsUghnwuGnA-J59zxEbPXPqz7T71X-PL8Rg5TTc/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651204/image/9e5a061f641a4f5bfeee889b861e5dc4.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/IQOnFZWM267xMfEl6AYt5OZrwBGV3PhOLk9HFtYCu20/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651204/image/da7e184a097ac3d2039f7134b6cd159b.jpeg@webp"
+        }
+      ],
+      "id": "9072651204",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Лук репчатый",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 2771,
+      "productId": "9072651204",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 72431,
+      "ratings": {
+        "commentsCount": 5191,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 128393
+      },
+      "seoCode": "luk_repchatyy",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "700г",
+        "shelfWeight": 700,
+        "step": 700,
+        "unitLabel": "1кг",
+        "unitPrice": 3959
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/rJ7YFrpYn5jqLXtsKwPtGkz0LEqPW18GSnrtsJ7UoUk/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651501/image/c7a3ab766489eef72db9699cac8debb0.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/buun5SFh3MQUD9iXFEEbLkqfzhwf1D_GBGPRsDilbYc/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651501/image/d646726b553c49d392fb5da874ba57c6.jpeg@webp"
+        }
+      ],
+      "id": "9072651501",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Бананы",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 12999,
+      "productId": "9072651501",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 44094,
+      "ratings": {
+        "commentsCount": 23381,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 457152
+      },
+      "seoCode": "banany",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "1кг",
+        "shelfWeight": 1000,
+        "step": 1000,
+        "unitLabel": "1кг",
+        "unitPrice": 12999
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/LlgBWs5b8Ct3r9ygB0YKuuQcBn205jjuYB99doXhaYw/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412080003/image/e33a83b24f5b20c6095ac2e8c5f7cdfc.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/tk-oRh9jI4_Sb7PMwur-x_UHdeeamFixxDNljCBAqgo/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412080003/image/bb0e1b8af419d30691223e0100ab9abe.jpeg@webp"
+        }
+      ],
+      "id": "3412080003",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Кабачки",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 11199,
+      "productId": "3412080003",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-12-31T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 2382,
+      "ratings": {
+        "commentsCount": 1831,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 26784
+      },
+      "seoCode": "kabachki",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "700г",
+        "shelfWeight": 700,
+        "step": 700,
+        "unitLabel": "1кг",
+        "unitPrice": 15999
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/AAAVbVKzu4g4f9-x80KuW_XpDg9N0dPETIpy8gzxmgM/rs:fit:416:416/plain/s3://img-dostavka/uf/14f/14fb79fd01e5ad17df924642878e71c2/d26ae15bf5b63377cf6b97678b6f015d.png@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/BDNEw5gF6NM5m9cjWYLbwUVqDT-5afuW02VgVeGQmH4/rs:fit:416:416/plain/s3://img-dostavka/uf/d89/d890d3a25e694c154bafb5a078de166e/1b0a9d0096367266b401e6bd591f639b.jpeg@webp"
+        }
+      ],
+      "id": "1000258682",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Ванилин Haas 1.5г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 899,
+      "productId": "1000258682",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 186,
+      "ratings": {
+        "commentsCount": 325,
+        "external": null,
+        "rating": 5,
+        "scoresCount": 8269
+      },
+      "seoCode": "haas_vanilin_252100_dlya_konditeskikh_izdeliy_belyy_poroshok_zapakh_vanili_1_5_g_bumazhnyy_paket_ooo",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/uZRXfTbRcL0bnC1Ei2EVI43z6PkUyY-QoYSxm1GNMe8/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651503/image/d45f702fe341c4289bed28a49503a655.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/iU2kiw8OEyQlqini4cR2ap3pqnKpaVSvOaMWr-M76Lo/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651503/image/c30ef439d31b305ec692792bfd69d347.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/d3gg8qCwVovCsj8yC1sNKnAroYy1Gk5w9HFTfGLF4ZM/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651503/image/9041a689b30049b75b1932e73ada8db7.jpeg@webp"
+        }
+      ],
+      "id": "9072651503",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Апельсины",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 8399,
+      "productId": "9072651503",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 16348,
+      "ratings": {
+        "commentsCount": 10504,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 107408
+      },
+      "seoCode": "apelsiny",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "700г",
+        "shelfWeight": 700,
+        "step": 700,
+        "unitLabel": "1кг",
+        "unitPrice": 11999
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/nA7UjvP_BP4bMpAeECBpIlHsXeWHwxmh5VAzPBlNwpY/rs:fit:416:416/plain/s3://img-dostavka/uf/3fb/3fbd533b2c5233a8c17566a2aec37574/145d80da16c8dcb54af557d4ededb9bb.png@webp"
+        }
+      ],
+      "id": "2199910102",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Желатин Dr. Bakers пищевой 10г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 5999,
+      "productId": "2199910102",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 93,
+      "ratings": {
+        "commentsCount": 124,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 2683
+      },
+      "seoCode": "dr_oetker_zhelatin_pishchevoy_10gm_sashet_onken_80",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/jvFWMRYM7SFjdHe4Czj5zNwwcjlHPJCskcVogrkqQW4/rs:fit:416:416/plain/s3://img-dostavka/uf/01e/01e4687986136db699e0900a5e32faae/9a83d1d96dca6f591f90ff02e7641ad1.jpeg@webp"
+        }
+      ],
+      "id": "3133780401",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Сахар-песок белый кристаллический 1кг",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 7989,
+      "productId": "3133780401",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-19T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 378,
+      "ratings": {
+        "commentsCount": 6180,
+        "external": null,
+        "rating": 4.6,
+        "scoresCount": 189427
+      },
+      "seoCode": "sakhar_belyy_kristallicheskiy_fas_1kg",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/3oJEFNUHCHhXWbcHwzpkaQ4Xz2ymp64svU6JB6DzSX8/rs:fit:416:416/plain/s3://img-dostavka/uf/fa1/fa1bb88d21fc160103de34e535663143/e4b3706078a629c547842d5a7cc9b4e0.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/INGnOVuvDvPoCTww6w2MBpovrEMLxc5-TE_H1yZqLRs/rs:fit:416:416/plain/s3://img-dostavka/uf/f38/f38a06dd66d8762b98671cc5220a7298/f7150326567f51e535ce70b119e16a5c.jpeg@webp"
+        }
+      ],
+      "id": "1000096161",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Оладушки С пылу с жару пышные домашние 280г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 13499,
+      "productId": "1000096161",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 10,
+      "ratings": {
+        "commentsCount": 275,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 1495
+      },
+      "seoCode": "s_pylu_s_zharu_pyshnye_oladushki_domashnie_280g_floupak_lina_10",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/Ay94tP6Xxl0MiVZwX6Qx0gDAT02EtfVLbmgRUPmPfu4/rs:fit:416:416/plain/s3://img-dostavka/uf/229/2293f0cbb42d4a4fb9b1938db2878132/204a1da3426285efa717f98595150b96.jpeg@webp"
+        }
+      ],
+      "id": "1000051020",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Айран Магнит 1000мл",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 6199,
+      "productId": "1000051020",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 3,
+      "ratings": {
+        "commentsCount": 170,
+        "external": null,
+        "rating": 4.7,
+        "scoresCount": 1996
+      },
+      "seoCode": "magnit_ayran_1l_pl_but_fud_milk_9",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/W2iRnGm9IR1kY11T0u8Ojdx1EnFgCYhd7KsVopgp6HI/rs:fit:416:416/plain/s3://img-dostavka/uf/cbb/cbba444c40ae3798c97bf1727fbbbaa0/b0b449c43fb1114d0d3af159374a3cdd.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/4WBdrrpfLn2vogvupz8retlJQospvMry_4cuDVrJHZg/rs:fit:416:416/plain/s3://img-dostavka/uf/cb9/cb94b6822ae6df5e061261eff2c4db14/57983deb9d8a0e309907c311eb143fea.jpeg@webp"
+        }
+      ],
+      "id": "4000045102",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Уголь древесный Магнит 2.5кг",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 37999,
+      "productId": "4000045102",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 12,
+      "ratings": {
+        "commentsCount": 654,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 9804
+      },
+      "seoCode": "ugol_drevesnyy_2_5_kg",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/5hmKnLnA9d_TXEukuLT3wOaubncXQ17c06FoGPpYczo/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651210/image/d62a2e839d84ab0f609f50ab7c91fc6a.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/ZaWuboS-gUaxmtF2fXBjYjzid-b4IIV5B9ORf9spPvc/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651210/image/b15016b79ec845535cd7df84a3b1d006.jpeg@webp"
+        }
+      ],
+      "id": "9072651210",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Картофель",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 6718,
+      "productId": "9072651210",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 183235,
+      "ratings": {
+        "commentsCount": 5935,
+        "external": null,
+        "rating": 4.6,
+        "scoresCount": 95172
+      },
+      "seoCode": "kartofel_1kg",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "2кг",
+        "shelfWeight": 2000,
+        "step": 2000,
+        "unitLabel": "1кг",
+        "unitPrice": 3359
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/MCKGnUV6yTZ7kAA3ByhjABMjx2lK_TGyPYmXoTiqsTY/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651205/image/e78030e5f43e8df1c70a0a57ac41f121.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/tTquRdZR7hzuc1iHzPjn230kjsiumBiqyt5OVsIOFjo/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651205/image/d5caf5cde88f88b1423cb2d7ed408f23.jpeg@webp"
+        }
+      ],
+      "id": "9072651205",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Капуста белокочанная",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 7497,
+      "productId": "9072651205",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-19T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 69812,
+      "ratings": {
+        "commentsCount": 4150,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 75392
+      },
+      "seoCode": "kapusta_belokochannaya_1kg",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "3кг",
+        "shelfWeight": 3000,
+        "step": 3000,
+        "unitLabel": "1кг",
+        "unitPrice": 2499
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/pE8ARx2oOQK25QJtA6vYXcxsQCZ009dZR5qIEf7HJpw/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651504/image/1eff880eb0b463f0c8372b26fcb56e40.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/2puZNLSC5HkDdqLDh4YkO1fbakIJqQ_zbQ-xqRnr2vU/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651504/image/a6ca2d90a4ad95c62f66380108a5eaa6.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/uiGLB8IP2VnryMpHzWiEniX-bTN91QM3flLStAtflG8/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651504/image/9fd54292aa82f13942640e81b5b9d582.jpeg@webp"
+        }
+      ],
+      "id": "9072651504",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Лимоны",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 6399,
+      "productId": "9072651504",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-19T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 10556,
+      "ratings": {
+        "commentsCount": 4288,
+        "external": null,
+        "rating": 5,
+        "scoresCount": 86418
+      },
+      "seoCode": "limony",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "400г",
+        "shelfWeight": 400,
+        "step": 400,
+        "unitLabel": "1кг",
+        "unitPrice": 15999
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FFEBC4",
+          "text": "Создали для вас",
+          "textColor": "#BD4F01"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/6qLJlYDLdOAINvfsY83a2d2Dvr5OU-uX97jwdAnxQ9s/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000537689/image/fc7c478a3fb53a4205826f2fddb295fb.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/51LV46tQgTjs9k6KHTJ0YIetz0wtQK6BK0IY8UF_ljI/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000537689/image/9f2af19459e382676e5f07d92840c268.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/KIFabPb3XlXz-fWplsi-yqOQt54o6-73b9Y_a0U48gM/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000537689/image/57d0acf8d071a86c68371dc5118b8aca.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/sBN_jc8ke-xGxCX0pc6F8hpVXOlVKp0Ugdd0BjhEKyA/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000537689/image/ffdb77f461b26450cc93dfcf656e8abb.jpeg@webp"
+        }
+      ],
+      "id": "1000537689",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Кунжут Восточный гость 20г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 3199,
+      "productId": "1000537689",
+      "promotion": {
+        "discountPercent": 25,
+        "endDate": "2026-10-13T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 4299
+      },
+      "quantity": 10,
+      "ratings": {
+        "commentsCount": 114,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 2500
+      },
+      "seoCode": "vostochnyy_gost_kunzhut_20g",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/FAsI1clEAR0pIlltmD6YtZ-LGYZCfJ9CrHtxGy9Pw6g/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000198550/image/726035b8451a0678f020f315252b439f.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/kE1fOI_2yPJs4qNh9L0hiEftqYQ6Bxc5HeLRkNMtEeI/rs:fit:416:416/plain/s3://img-dostavka/uf/947/947abca132a93d4dd63eb04904b2faef/fe35f828543c0c8964f7d2db46121e58.jpeg@webp"
+        }
+      ],
+      "id": "1000198550",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Укроп М Свежесть 100г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 8999,
+      "productId": "1000198550",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 1,
+      "ratings": {
+        "commentsCount": 1315,
+        "external": null,
+        "rating": 4.5,
+        "scoresCount": 24186
+      },
+      "seoCode": "ukrop-m-svezhest-100g",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/qIa2aPS2QSpAcTIyBALmO5zyzhZWRN2e4axZf6lRjf8/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651201/image/2d395194dcf2013cf26330168cc98dd5.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/aaEmBgi4cxUn47ynDrUhGXIfhlGX13Nry0BMylr2lMc/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9072651201/image/871393ee232ad38ef49ea5039cf8daff.jpeg@webp"
+        }
+      ],
+      "id": "9072651201",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Морковь",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 1889,
+      "productId": "9072651201",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 44214,
+      "ratings": {
+        "commentsCount": 4263,
+        "external": null,
+        "rating": 4.6,
+        "scoresCount": 72519
+      },
+      "seoCode": "morkov",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "700г",
+        "shelfWeight": 700,
+        "step": 700,
+        "unitLabel": "1кг",
+        "unitPrice": 2699
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/Va1lNcRwvWq5dGT9gsfwjAFVISVyDeT6JAwNwwpygVU/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412070011/image/81646e34f23cd4ecb661862fcf4dd913.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/PXVadGNbh1kstb4lhsDjXqGCXricHwtVEEw1tyjq_RY/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412070011/image/61d316837730abcc35f4d53bc7228365.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/1AWKEcNdyGmQXSFN7baFQ70YMXVUcOV19GjEAqhgYCY/rs:fit:416:416/plain/s3://img-dostavka/uf/1ef/1efde2d63246d0e3e4a6afbde63aec4e/f9737ef52adfb3d666cff04a796d7141.jpeg@webp"
+        }
+      ],
+      "id": "3412070011",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Свекла",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 1799,
+      "productId": "3412070011",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-26T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 11612,
+      "ratings": {
+        "commentsCount": 1937,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 31975
+      },
+      "seoCode": "svekla",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "600г",
+        "shelfWeight": 600,
+        "step": 600,
+        "unitLabel": "1кг",
+        "unitPrice": 2999
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/L7NkVceSesTWVcxgAMnQat2VJ6TiPApv8VEAfdjgv3g/rs:fit:416:416/plain/s3://img-dostavka/uf/dc3/dc361508e958b6f515a8ca157b55e952/0b88766490418bec52083b1b9ae3418e.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/dmIwdLwDja3kJBpUdF-htLazTgtBVcz2Uzg0s60x_v0/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000233462/image/10a7822a61f6c39a9c645ecfc872a884.jpeg@webp"
+        }
+      ],
+      "id": "1000233462",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Филе цыпленка-бройлера",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 43999,
+      "productId": "1000233462",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-10-19T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 10067,
+      "ratings": {
+        "commentsCount": 5926,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 101090
+      },
+      "seoCode": "file_tsb_okhl_lotok_1_kg_v_lotok_ooo_soyuzptitseprom_5",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "1кг",
+        "shelfWeight": 1000,
+        "step": 1000,
+        "unitLabel": "1кг",
+        "unitPrice": 43999
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/D8S_vhCh79CCiJwewHDIE6-v1DeC3VMuOFXxOXfyyds/rs:fit:416:416/plain/s3://img-dostavka/uf/9f0/9f0526fd452fe0fa017d2482617fb1e3/8370bd0ae444004f7db12900d6f68c66.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/5Y-5BahGfdoet-rr3TMpFUz57LVLeTZYG4NTx7oT9Us/rs:fit:416:416/plain/s3://img-dostavka/uf/275/27542dc90a65e684881dcd35da08607b/9d68b96c35da93c4f2e48f746bb3cdbf.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/UAuAK6kl7MorAIV50PPbILl0ghPdORaZ_v_15K0WEWU/rs:fit:416:416/plain/s3://img-dostavka/uf/7c4/7c425d73bcb85bd23c3f47f03401c844/c79d71dc0cf63c62f99947da2fabe352.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/qcemF33mdA6ujsAaaghiJE1v8DiXLNBarhV6UQfd2gs/rs:fit:416:416/plain/s3://img-dostavka/uf/b2f/b2f1774f0999426734580ac5ba958e3f/ef5286bb002337b65f3f9d5a8dd1bf35.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/yiO-nQP28BBUj4yppii-fTqa7JIHGsHdJWN6fAGjjA0/rs:fit:416:416/plain/s3://img-dostavka/uf/fb3/fb3ccf033505728243c9ba2ce5cfafc0/734b82a4facc84d3ce93ca7b79ba25ba.jpeg@webp"
+        }
+      ],
+      "id": "1000230773",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Мацони РостАгроКомплекс 3.2% 300г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 7799,
+      "productId": "1000230773",
+      "promotion": {
+        "discountPercent": 22,
+        "endDate": "2026-11-03T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 9999
+      },
+      "quantity": 3,
+      "ratings": {
+        "commentsCount": 112,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 1030
+      },
+      "seoCode": "matsoni_rostagrokompleks_3_2_300g",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/bczHgO7h5OrD19Z7SplUb5zBqp2MMrfA0FVwkDJuc3I/rs:fit:416:416/plain/s3://img-dostavka/uf/124/12432235de0eb8c3866d1294ddc8477c/5e610738cc8560acbb89ec81bf8e3767.jpeg@webp"
+        }
+      ],
+      "id": "1000157764",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Айран Магнит 500мл",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 3799,
+      "productId": "1000157764",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 8,
+      "ratings": {
+        "commentsCount": 45,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 657
+      },
+      "seoCode": "magnit_ayran_0_5l_pl_but_fud_milk_10",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/jc7-hhSgZuyN24_vmK2p870DyMqkQnObEW59KYdyB0M/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412060011/image/d2c39cddb5442df604e059df07a2b9ed.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/MWkoW-1UQSIuN-r3sMELUr1zV3Ka8Yz3ZTuEI5fFZ_A/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412060011/image/bd246b2f0149ad2acc73ed273d87298f.jpeg@webp"
+        }
+      ],
+      "id": "3412060011",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Чеснок",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 3499,
+      "productId": "3412060011",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 3141,
+      "ratings": {
+        "commentsCount": 1243,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 30009
+      },
+      "seoCode": "chesnok",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "100г",
+        "shelfWeight": 100,
+        "step": 100,
+        "unitLabel": "1кг",
+        "unitPrice": 34990
+      }
+    },
+    {
+      "badges": [],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/2QYW6Ay9VSgHbGcDZQHr6QtG3xGT9L2CHbV0ZLdWtfA/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1799900191/image/bac7cd2489fca5e70a9b19268bddcf9e.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/olU4QgHgVbYz4IMjb9pNMxcmXvyQKKa53wpbFBJfYec/rs:fit:416:416/plain/s3://img-dostavka/uf/6ab/6ab164d93f9b8ebc4617363505353485/0441a3e8fe8fea415a5b11e419e0eb77.jpeg@webp"
+        }
+      ],
+      "id": "1799900191",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Горчица Махеевъ Русская столовая 140г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 4299,
+      "productId": "1799900191",
+      "promotion": {
+        "discountPercent": 14,
+        "endDate": "2026-10-27T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 4999
+      },
+      "quantity": 19,
+      "ratings": {
+        "commentsCount": 637,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 8620
+      },
+      "seoCode": "gorchitsa_russkaya_makheev_140g",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/H5j9Ni3vb5bpdVDE4wvJfblSDtGQSQeRY_qQ7-wsPJ4/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1444282069/image/42c652b1fc9951d27d562418b294dde3.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/AIvB08lCcXc5wsnfWbJVHlgkwy8w25QJ7vjX6TbgaZ0/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1444282069/image/7d686f2fd063a707410d99ae3ef4684d.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/-2J1j-MByRPEuJZZ3BZq6vFezBZT4lWUKZRKM0N2IHo/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1444282069/image/0654b682e290558097c65b53b6e017a1.jpeg@webp"
+        }
+      ],
+      "id": "1444282069",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Голубика 125г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 19999,
+      "productId": "1444282069",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 2,
+      "ratings": {
+        "commentsCount": 1153,
+        "external": null,
+        "rating": 4.6,
+        "scoresCount": 9905
+      },
+      "seoCode": "golubika_125g",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/3JcyTw9sZpjVWSBSanC-EZF4J4zGo9xfxTHGsIwJTJg/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412080035/image/546da5cdddcb4f9a75787e74484086d2.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/gbJNa0KJrOAJhtKarpr0m6fS8l4vjP4IhKDSUt-Bhcg/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412080035/image/f477978bd12dcdf2a0fafe6559003791.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/a3dbSbUc2zkOLOInwSTDjZOnLOjlVVHPwpNjfRwrXGU/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412080035/image/a16bf5a33bb1db896c80c3d1491a6e7a.jpeg@webp"
+        }
+      ],
+      "id": "3412080035",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Киви",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 9199,
+      "productId": "3412080035",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 3612,
+      "ratings": {
+        "commentsCount": 2539,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 33919
+      },
+      "seoCode": "kivi_1kg",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "400г",
+        "shelfWeight": 400,
+        "step": 400,
+        "unitLabel": "1кг",
+        "unitPrice": 22999
+      }
+    },
+    {
+      "badges": [],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/VJ6uyCUu2zpLlqA7DWOAepRlwMOuZR79vViTrWFWAnk/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412100007/image/f16bb641f4901f7ddc4f83b0eb039bcf.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/8eQ2E1jmfHlXWj0FECkg5SOMQ-jgZWeYjEwodXu7KvE/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/3412100007/image/8934d43e73c46052d2f84fb021ff8cf1.jpeg@webp"
+        }
+      ],
+      "id": "3412100007",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Перец грунтовой",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 2909,
+      "productId": "3412100007",
+      "promotion": {
+        "discountPercent": 30,
+        "endDate": "2026-10-13T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 4199
+      },
+      "quantity": 0,
+      "ratings": {
+        "commentsCount": 1609,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 26875
+      },
+      "seoCode": "perets_bolgarskiy_1kg",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "300г",
+        "shelfWeight": 300,
+        "step": 300,
+        "unitLabel": "1кг",
+        "unitPrice": 9699
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/0GXGnqwOeZ9bpsPBifMzUji3Dz5ieUA6WTmF0c5ALx0/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000048427/image/c4fa99a6a75eac6b155b27ddc5629726.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/s_qUPi8IlvVagAEqW14CvzGoWQEA-c6gWnaFUn7mHJQ/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000048427/image/11175d1210ae1adf95c6e3e5011b598c.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/SH8xy_On6iDf9MuCpZUFcx4Rxp6Bw6g1JZAUt3aToQ8/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000048427/image/c57aa35d2c5721c6f5f5656c135944e8.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/j8g2UiQOrWV9jg_e_4IgKGsgBmWLhtcOIMuZpKVCfTw/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000048427/image/88326dda4d74396aac60936f08140217.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/LX_ORadd5ba4HRXbyEejI74h0n8Y3q3h74mjXnBrzco/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000048427/image/d601094b762cc62f0855ebcc24d92899.jpeg@webp"
+        }
+      ],
+      "id": "1000048427",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Козинак Восточный гость подсолнечный 150г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 3499,
+      "productId": "1000048427",
+      "promotion": {
+        "discountPercent": 30,
+        "endDate": "2027-09-07T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 4999
+      },
+      "quantity": 12,
+      "ratings": {
+        "commentsCount": 769,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 9620
+      },
+      "seoCode": "kozinak_podsolnechnyy_vostochnyy_gost_150g",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/kZgC4P31AmQx-FDcAocYIDDcVX-hmsD6eIbiSx0r6Aw/rs:fit:416:416/plain/s3://img-dostavka/uf/6a6/6a61c93447da6a60d7fa152a30aa7675/0f1f41c6e692534cabd93e659a67cb66.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/3yVmqnP6LAo2Nnrq1Rc3XKK5kP7-8l_dP9aikVHmwj0/rs:fit:416:416/plain/s3://img-dostavka/uf/3cd/3cde56aa57cddd1e18cb62951e91770c/83b87641bfd89cebca20a40b6bf1334f.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/-FU3O7XjbxHdXZ08YwD2W-AaBrpSvdDf6-X7zVvmKS8/rs:fit:416:416/plain/s3://img-dostavka/uf/522/522a664b05f01236388fed3d5e0b4efd/724bb795669c8597bb50aceacb529e57.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/H0JF6jkqtzUEG74b1C8bQnVyia68zzQsNAZ7ZHtHdLA/rs:fit:416:416/plain/s3://img-dostavka/uf/393/3934838b9fee17b0640425f91cbb1c79/d17783dd57b38fbab1ed9421fbffdd72.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/JkG7RYGBiGEhH1H60LD9jxBHeA1-9BvGLGbdZ7n2j_0/rs:fit:416:416/plain/s3://img-dostavka/uf/8a8/8a8d2d00d62d6e726f65c390909b1af2/58f1a4991259e4094595fe87bbea7883.jpeg@webp"
+        }
+      ],
+      "id": "1000049785",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Молоко Северная Долина ультрапастеризованное 2.5% 950г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 8499,
+      "productId": "1000049785",
+      "promotion": {
+        "discountPercent": 34,
+        "endDate": "2027-01-12T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 12999
+      },
+      "quantity": 22,
+      "ratings": {
+        "commentsCount": 107,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 1557
+      },
+      "seoCode": "severnaya_dolina_moloko_u_past_2_5_950g_tba_shakhunya_12",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/5uuVYxiGBDSo2fN-urxEOhAnYImNRSODXSo9SPy8nUk/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1444282020/image/986698f991e1ce3b0ff8c1c04535504c.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/fIRcewXNc1mf0jQamZ6dOfKJz-MYM73EYoyp7XxmGUg/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1444282020/image/5577e55f82c50a2be796e42313bc5666.jpeg@webp"
+        }
+      ],
+      "id": "1444282020",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Перец красный",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 18149,
+      "productId": "1444282020",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": "2026-12-31T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": null
+      },
+      "quantity": 4317,
+      "ratings": {
+        "commentsCount": 2522,
+        "external": null,
+        "rating": 4.6,
+        "scoresCount": 46264
+      },
+      "seoCode": "perets_krasnyy",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "550г",
+        "shelfWeight": 550,
+        "step": 550,
+        "unitLabel": "1кг",
+        "unitPrice": 32999
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#FF2A66",
+          "backgroundGradient": "gradient/loyalty/plus small",
+          "backgroundIcon": "Base / 24 / Loyalty / Bonus / White",
+          "text": "По карте",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "backgroundColor": "#ECF8DE",
+          "text": "Только у нас",
+          "textColor": "#3B5803"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/nHE-p6y8eLQS1ADKK9OdVjHwgSI8DzAka07psYxyvvc/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000452672/image/b09f4eb4f95d6db8e86397f8cd817f37.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/EhsCLSAO7jOIjdsaLTTd_thK8yVBTDL0vpjgNaMhbe0/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000452672/image/b7e9deb0b60530fc77007f81ad7e24ab.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/KOJ6rg9EikTkktcBoVh753KHuDP9SCYXjw8yBgXUz7w/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000452672/image/4be786409849cce72a8cca1ac66772c1.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/RRunvOKxMVBnC0t4fO3TUMyQWb6yX5z6G9riYot_rrs/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/1000452672/image/00ce51715b1c20ad86dcb5bb8a511dd4.jpeg@webp"
+        }
+      ],
+      "id": "1000452672",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Чак-чак Восточный гость 250г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 12499,
+      "productId": "1000452672",
+      "promotion": {
+        "discountPercent": 16,
+        "endDate": "2027-09-07T23:59:59Z",
+        "isPromotion": true,
+        "oldPrice": 14999
+      },
+      "quantity": 7,
+      "ratings": {
+        "commentsCount": 277,
+        "external": null,
+        "rating": 4.5,
+        "scoresCount": 2115
+      },
+      "seoCode": "vostochnyy_gost_chak_chak_250g_a",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/LjwGUC-yuTlJlNJDdpL4HakHNc853E59cTtYVS_rnpY/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9259258168/image/a535b7f0105334f70f7e2ba0c036226b.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/0StREpePnwEqET0XrU7IU34MBEB757Q-u83id_r01pI/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9259258168/image/c571563b04c1837f378124d9a5a5b593.jpeg@webp"
+        },
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/ACCWHMOwjdvMRznsfLO_nqrPM2ZGNcvpW6XdFANmJLI/rs:fit:416:416/plain/s3://img-dostavka/pim/goods/9259258168/image/108f6da6f5d9f7cb81fddbeb7d6f1d81.jpeg@webp"
+        }
+      ],
+      "id": "9259258168",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Мандарины",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 21999,
+      "productId": "9259258168",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 19316,
+      "ratings": {
+        "commentsCount": 20774,
+        "external": null,
+        "rating": 4.8,
+        "scoresCount": 211594
+      },
+      "seoCode": "mandariny",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": true,
+        "minStep": 1,
+        "shelfLabel": "1кг",
+        "shelfWeight": 1000,
+        "step": 1000,
+        "unitLabel": "1кг",
+        "unitPrice": 21999
+      }
+    },
+    {
+      "badges": [
+        {
+          "backgroundColor": "#3B3A3A",
+          "backgroundGradient": "gradient/loyalty/premium",
+          "text": "+5% с Премиум",
+          "textColor": "#FFD69E"
+        },
+        {
+          "backgroundColor": "#FF5858",
+          "backgroundGradient": "gradient/payment/mpay",
+          "text": "+15% с Магнит Пэй",
+          "textColor": "#FFFFFF"
+        }
+      ],
+      "catalogType": "1",
+      "gallery": [
+        {
+          "type": "IMAGE",
+          "url": "https://images-foodtech.magnit.ru/9EiAZm4BwZyJiBn8LEOrhHiwByAxuaxtEBHlBAS0Jgc/rs:fit:416:416/plain/s3://img-dostavka/uf/041/04102b212420b59eeb252b8f312770ed/ddc2f51bf3e70594a12743022129c25d.jpeg@webp"
+        }
+      ],
+      "id": "3089020004",
+      "isAdditionalActionRequired": false,
+      "isBiometryRequired": false,
+      "isForAdults": false,
+      "isInFavorites": null,
+      "isLowStock": null,
+      "name": "Дрожжи быстродействующие Саф-Момент 11г",
+      "needPassport": false,
+      "orderProperties": {
+        "minOrderQuantity": 1,
+        "orderStepQuantity": 1
+      },
+      "orders": null,
+      "pickupOnly": false,
+      "price": 2699,
+      "productId": "3089020004",
+      "promotion": {
+        "discountPercent": null,
+        "endDate": null,
+        "isPromotion": false,
+        "oldPrice": null
+      },
+      "quantity": 86,
+      "ratings": {
+        "commentsCount": 488,
+        "external": null,
+        "rating": 4.9,
+        "scoresCount": 10430
+      },
+      "seoCode": "drozhzhi_saf_moment_11g",
+      "service": "core_mm",
+      "skuGroupId": null,
+      "skuIds": null,
+      "storeCode": "522856",
+      "targetCart": "core_mm",
+      "weighted": {
+        "isWeighted": false,
+        "minStep": null,
+        "shelfLabel": null,
+        "shelfWeight": null,
+        "step": null,
+        "unitLabel": null,
+        "unitPrice": null
+      }
+    }
+  ],
+  "offerCategoryIds": null,
+  "pagination": {
+    "hasMore": true,
+    "limit": 34,
+    "nextOffset": 34,
+    "offset": 0,
+    "totalCount": 4771
+  },
+  "resultId": "a0a870b1-2cd5-4449-98fa-12130d6b7ca6",
+  "term": null,
+  "videoDelay": 1
+}

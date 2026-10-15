@@ -1,0 +1,252 @@
+{
+  "address": "Нижегородская обл, г Нижний Новгород, пр-кт Ленина, д 50",
+  "cityFiasId": "555e7d61-d9a7-4ba6-9770-6caa8198c483",
+  "coordinates": {
+    "latitude": 56.27912,
+    "longitude": 43.923945
+  },
+  "deliveryTypeList": [
+    "DELIVERY_TYPE_DELIVERY",
+    "DELIVERY_TYPE_PICKUP",
+    "DELIVERY_TYPE_OFFLINE"
+  ],
+  "externalId": {
+    "owner": "OWNER_MAGNIT",
+    "storeCode": "522856"
+  },
+  "isActive": true,
+  "isFavorite": false,
+  "status": "STATUS_ACTIVE",
+  "storeType": "STORE_TYPE_MM",
+  "storeTypeV2": "MM",
+  "timetableList": [
+    {
+      "key": "WORKING_TIMETABLE_TYPE_STORE",
+      "value": {
+        "is24hOpen": false,
+        "weeklySchedule": {
+          "friday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "07:30"
+            },
+            "isDayOff": false
+          },
+          "monday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "07:30"
+            },
+            "isDayOff": false
+          },
+          "saturday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "07:30"
+            },
+            "isDayOff": false
+          },
+          "sunday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "07:30"
+            },
+            "isDayOff": false
+          },
+          "thursday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "07:30"
+            },
+            "isDayOff": false
+          },
+          "tuesday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "07:30"
+            },
+            "isDayOff": false
+          },
+          "wednesday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "07:30"
+            },
+            "isDayOff": false
+          }
+        }
+      }
+    },
+    {
+      "key": "WORKING_TIMETABLE_TYPE_PICKUP",
+      "value": {
+        "is24hOpen": false,
+        "weeklySchedule": {
+          "friday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "monday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "saturday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "sunday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "thursday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "tuesday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "wednesday": {
+            "dailySchedule": {
+              "closingTime": "22:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          }
+        }
+      }
+    },
+    {
+      "key": "WORKING_TIMETABLE_TYPE_ORDERING",
+      "value": {
+        "is24hOpen": false,
+        "weeklySchedule": {
+          "friday": {
+            "dailySchedule": {
+              "closingTime": "21:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "monday": {
+            "dailySchedule": {
+              "closingTime": "21:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "saturday": {
+            "dailySchedule": {
+              "closingTime": "21:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "sunday": {
+            "dailySchedule": {
+              "closingTime": "21:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "thursday": {
+            "dailySchedule": {
+              "closingTime": "21:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "tuesday": {
+            "dailySchedule": {
+              "closingTime": "21:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "wednesday": {
+            "dailySchedule": {
+              "closingTime": "21:00",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          }
+        }
+      }
+    },
+    {
+      "key": "WORKING_TIMETABLE_TYPE_DELIVERY",
+      "value": {
+        "is24hOpen": false,
+        "weeklySchedule": {
+          "friday": {
+            "dailySchedule": {
+              "closingTime": "21:30",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "monday": {
+            "dailySchedule": {
+              "closingTime": "21:30",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "saturday": {
+            "dailySchedule": {
+              "closingTime": "21:30",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "sunday": {
+            "dailySchedule": {
+              "closingTime": "21:30",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "thursday": {
+            "dailySchedule": {
+              "closingTime": "21:30",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "tuesday": {
+            "dailySchedule": {
+              "closingTime": "21:30",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          },
+          "wednesday": {
+            "dailySchedule": {
+              "closingTime": "21:30",
+              "openingTime": "09:00"
+            },
+            "isDayOff": false
+          }
+        }
+      }
+    }
+  ]
+}

@@ -57,13 +57,14 @@ export function mealNeeds(data:MenuData){
   }
   return [...rows].map(([foodId,q])=>({foodId,...q}));
 }
-export function eligibleOffers(data:MenuData,offers:PriceOffer[],now:Date){const purchaseDate=[data.startDate,new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Moscow'}).format(now)].sort().at(-1)!;const restricted=data.profile.members.some(m=>m.diet!=='regular'||m.allergies.length>0);return offers.filter(o=>!o.disabled&&o.city===data.profile.city&&data.profile.stores.includes(o.store)&&Number.isFinite(o.packQuantity)&&o.packQuantity>0&&o.price>0&&Date.parse(o.verifiedAt)<=now.getTime()+60000&&now.getTime()-Date.parse(o.verifiedAt)<=48*3600000&&(!o.validFrom||o.validFrom<=purchaseDate)&&(!o.validTo||o.validTo>=purchaseDate)&&(!o.loyaltyRequired||data.profile.loyaltyStores.includes(o.store))&&(!restricted||!!o.compositionConfirmed));}
+export function eligibleOffers(data:MenuData,offers:PriceOffer[],now:Date){const purchaseDate=[data.startDate,new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Moscow'}).format(now)].sort().at(-1)!;const restricted=data.profile.members.some(m=>m.diet!=='regular'||m.allergies.length>0);return offers.map(o=>o.loyaltyRequired&&!data.profile.loyaltyStores.includes(o.store)&&o.regularPrice&&o.regularPrice>=o.price?{...o,price:o.regularPrice,regularPrice:null,loyaltyRequired:0,minPacks:1}:o).filter(o=>!o.disabled&&o.city===data.profile.city&&data.profile.stores.includes(o.store)&&Number.isFinite(o.packQuantity)&&o.packQuantity>0&&o.price>0&&Date.parse(o.verifiedAt)<=now.getTime()+60000&&now.getTime()-Date.parse(o.verifiedAt)<=48*3600000&&(!o.validFrom||o.validFrom<=purchaseDate)&&(!o.validTo||o.validTo>=purchaseDate)&&(!o.loyaltyRequired||data.profile.loyaltyStores.includes(o.store))&&(!restricted||!!o.compositionConfirmed));}
 function alternatives(quantity:number,offers:PriceOffer[]){return offers.map(offer=>{const minimum=offer.minQuantity||1,step=offer.quantityStep||1,weight=minimum+Math.max(0,Math.ceil((quantity-minimum-1e-8)/step))*step,need=offer.variableWeight?round(weight/offer.packQuantity):Math.ceil((quantity-1e-8)/offer.packQuantity),promoPacks=offer.variableWeight?need:Math.max(offer.minPacks,need),promoCost=Math.round(promoPacks*offer.price);
   if(offer.minPacks>1&&offer.regularPrice&&need*offer.regularPrice<promoCost)return {offer:{...offer,price:offer.regularPrice,regularPrice:null,minPacks:1},packs:need,cost:need*offer.regularPrice};
   return {offer,packs:promoPacks,cost:promoCost};}).sort((a,b)=>a.cost-b.cost||a.packs-b.packs);}
 function subsets(values:string[],max:number){const result:string[][]=[[]];for(const value of values)for(const old of [...result])if(old.length<max)result.push([...old,value]);return result;}
 export function makeBasket(data:MenuData,offers:PriceOffer[],now=new Date()):Basket{
-  const needs=mealNeeds(data),eligible=eligibleOffers(data,offers,now),storeIds=[...new Set(eligible.map(o=>o.store))],sets=subsets(storeIds,data.profile.maxStores);let best:Basket|null=null;
+  if(data.shoppingStore&&!data.profile.stores.includes(data.shoppingStore))throw new Error('Выбранный магазин отсутствует в параметрах семьи.');
+  const needs=mealNeeds(data),eligible=eligibleOffers(data,offers,now),storeIds=[...new Set(eligible.map(o=>o.store))],sets=data.shoppingStore?[[data.shoppingStore]]:subsets(storeIds,data.profile.maxStores);let best:Basket|null=null;
   // Price each SKU once, then choose the cheapest suitable pack per store.
   // This keeps a large official catalogue practical on a phone.
   const choices=new Map(needs.map(n=>{const sorted=n.toBuy>0?alternatives(n.toBuy,eligible.filter(o=>o.foodId===n.foodId)):[];const byStore=new Map<string,typeof sorted[number]>();for(const choice of sorted)if(!byStore.has(choice.offer.store))byStore.set(choice.offer.store,choice);return [n.foodId,{sorted,byStore}] as const;}));
@@ -75,6 +76,15 @@ export function makeBasket(data:MenuData,offers:PriceOffer[],now=new Date()):Bas
   }
   const active=needs.filter(n=>n.toBuy>0),comparisons:Basket['comparisons']=data.profile.stores.map(store=>{const priced=active.map(n=>choices.get(n.foodId)!.byStore.get(store)).filter((c):c is NonNullable<typeof c>=>!!c),missing=active.length-priced.length;return {store,cost:priced.length||!active.length?priced.reduce((sum,c)=>sum+c.cost,0):null,missing,coverage:active.length?Math.round(priced.length/active.length*100):100};});
   return {...best!,comparisons:comparisons.sort((a,b)=>a.missing-b.missing||(a.cost??Infinity)-(b.cost??Infinity))};
+}
+export function basketQuoteMatrix(data:MenuData,offers:PriceOffer[],now=new Date()){
+ const eligible=eligibleOffers(data,offers,now);
+ return mealNeeds(data).filter(n=>n.toBuy>0).map(n=>({foodId:n.foodId,name:foodMap.get(n.foodId)!.name,quantity:n.toBuy,unit:foodMap.get(n.foodId)!.unit,stores:data.profile.stores.map(store=>{
+  const quotes=alternatives(n.toBuy,eligible.filter(o=>o.foodId===n.foodId&&o.store===store)),quote=quotes[0];
+  const raw=offers.filter(o=>o.foodId===n.foodId&&o.store===store&&o.city===data.profile.city&&!o.disabled);
+  const reason=quote?'':raw.some(o=>o.loyaltyRequired&&!data.profile.loyaltyStores.includes(store)&&!o.regularPrice)?'Нужна карта':raw.some(o=>now.getTime()-Date.parse(o.verifiedAt)>48*3600000)?'Цена устарела':raw.some(o=>!o.compositionConfirmed)&&data.profile.members.some(m=>m.diet!=='regular'||m.allergies.length)?'Состав не подтверждён':'Нет подходящей цены';
+  return {store,cost:quote?.cost??null,reason};
+ })}));
 }
 export function optimizeBudget(data:MenuData,offers:PriceOffer[],now=new Date()){
   let current=data,currentBasket=makeBasket(data,offers,now),changed=0;

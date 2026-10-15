@@ -39,5 +39,25 @@ try{
  const publicState=JSON.stringify(await service.getPlanner(alice));assert.ok(!publicState.includes('encryptedKey'));assert.ok(!publicState.includes('encrypted_key'));assert.ok(!publicState.includes('sk-test-only'));await service.plannerAction(bob,{action:'removeAI'});assert.equal((await service.getPlanner(alice)).ai.configured,true);
  const draft=await service.plannerAction(alice,{action:'generate',mode:'local',startDate:'2026-10-19'});await service.plannerAction(alice,{action:'saveFamily',revision:1,profile:{...profile,weeklyBudget:9000000}});await assert.rejects(()=>service.plannerAction(alice,{action:'finalize',id:draft.id,revision:0}),/изменились/);
  await service.plannerAction(bob,{action:'saveFamily',revision:0,profile:{...profile,city:'Москва'}});const bobPlan=await service.plannerAction(bob,{action:'generate',mode:'local',startDate:'2026-10-19'});const partial=await service.plannerAction(bob,{action:'finalize',id:bobPlan.id,revision:0});assert.ok(sqlite.prepare('SELECT count(*) AS n FROM items WHERE list_id=? AND price IS NULL').get(partial.id).n>0,'list can be saved without per-meal confirmations or inventing missing prices');
+ const serverEnv=require(path.join(folder,'lib/test-env.js')).env,masterBefore=serverEnv.AI_SECRET_ENCRYPTION_KEY;
+ serverEnv.DEEPSEEK_API_KEY='test-only-server-key-without-ui';delete serverEnv.AI_SECRET_ENCRYPTION_KEY;
+ try{
+  const carol={userId:'user-server',email:'server@example.invalid',fullName:'Server User'};
+  const serverState=await service.getPlanner(carol);assert.equal(serverState.ai.configured,true);assert.equal(serverState.ai.source,'server');assert.equal(serverState.ai.model,'deepseek-flash');assert.ok(!JSON.stringify(serverState).includes(serverEnv.DEEPSEEK_API_KEY));
+  await service.plannerAction(carol,{action:'saveFamily',revision:0,profile});const newPlan=await service.plannerAction(carol,{action:'generate',mode:'local',startDate:'2026-10-19'});
+  const serverPlan=(await service.getPlanner(carol)).plans[0],serverGroup=serverPlan.data.groups.find(g=>g.meal==='lunch');
+  await assert.rejects(()=>service.plannerAction(carol,{action:'saveAI',key:'test-only-other-secret',model:'deepseek-flash'}),/сервер/);
+  await assert.rejects(()=>service.plannerAction(carol,{action:'removeAI'}),/Серверный/);
+  let release,startCall,providerCalls=0;const blocked=new Promise(r=>release=r),started=new Promise(r=>startCall=r);
+  globalThis.fetch=async(url,init)=>{assert.equal(init.headers.Authorization,'Bearer '+serverEnv.DEEPSEEK_API_KEY);assert.equal(JSON.parse(init.body).model,'deepseek-flash');providerCalls++;startCall();await blocked;return Response.json({choices:[{finish_reason:'stop',message:{content:JSON.stringify({recipes:[{name:'Серверный новый суп',meal:'lunch',time:30,storageDays:3,ingredients:[{foodId:'rice',quantity:80},{foodId:'potato',quantity:100}],steps:['Промойте рис и нарежьте картофель.','Залейте водой и варите до готовности.'],equipment:['stove'],emoji:'🍲'}]})}}]});};
+  const replacement=service.plannerAction(carol,{action:'replace',id:newPlan.id,revision:0,groupId:serverGroup.id});await started;
+  await assert.rejects(()=>service.plannerAction(carol,{action:'replace',id:newPlan.id,revision:0,groupId:serverGroup.id}),/Предыдущий запрос/);assert.equal(providerCalls,1,'server credential cannot trigger parallel paid requests');release();await replacement;
+  assert.equal(sqlite.prepare('SELECT count(*) AS n FROM ai_credentials WHERE owner=?').get(carol.userId).n,0,'environment credential is never copied to the database');
+  assert.equal(sqlite.prepare("SELECT count(*) AS n FROM ai_requests WHERE owner=? AND status='pending'").get(carol.userId).n,0);
+  globalThis.fetch=async()=>new Response('{}',{status:401});await assert.rejects(()=>service.plannerAction(carol,{action:'replace',id:newPlan.id,revision:1,groupId:serverGroup.id}),/HTTP 401/);assert.equal((await service.getPlanner(carol)).plans[0].revision,1,'server provider failure preserves recipe');
+  assert.equal(sqlite.prepare("SELECT count(*) AS n FROM ai_requests WHERE owner=? AND status='pending'").get(carol.userId).n,0,'failed request releases the server credential lease');
+  for(let n=0;n<98;n++)sqlite.prepare("INSERT INTO ai_requests(id,owner,status,created_at) VALUES(?,?,'ok',?)").run('quota-server-'+n,carol.userId,new Date().toISOString());
+  await assert.rejects(()=>service.plannerAction(carol,{action:'replace',id:newPlan.id,revision:1,groupId:serverGroup.id}),/100 запросов/);
+ }finally{delete serverEnv.DEEPSEEK_API_KEY;serverEnv.AI_SECRET_ENCRYPTION_KEY=masterBefore;}
  console.log('Planner integration passed: default acceptance, repeated AI replacements, failure preservation, request lease release, revisions, automatic catalogue prices, regional/composition checks, durable priced/partial lists and concurrent/idempotent finalization.');
 }finally{globalThis.fetch=oldFetch;sqlite.close();fs.rmSync(folder,{recursive:true,force:true});delete globalThis.__plannerDb;}

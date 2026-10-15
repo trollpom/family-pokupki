@@ -58,6 +58,10 @@ try {
   assert.equal((await fetch(origin+'/',{headers})).status,200,'server-rendered home works with real SDK and session');
   await stop();await start();
   const restored=await fetch(origin+'/api/app',{headers});assert.equal(restored.status,200);assert.ok((await restored.json()).lists.some(list=>list.id===id),'list survives Next.js process restart');
+  await stop();env.DEEPSEEK_API_KEY='test-only-http-server-key';await start();
+  const serverAiResponse=await fetch(origin+'/api/planner',{headers});assert.equal(serverAiResponse.status,200);const serverAi=await serverAiResponse.json();assert.equal(serverAi.ai.configured,true);assert.equal(serverAi.ai.source,'server');assert.ok(!JSON.stringify(serverAi).includes(env.DEEPSEEK_API_KEY),'server key is not returned by API');
+  const serverSave=await fetch(origin+'/api/planner',{method:'POST',headers,body:JSON.stringify({action:'saveAI',key:'test-only-http-input',model:'deepseek-flash'})});assert.equal(serverSave.status,400);assert.match((await serverSave.json()).error,/сервер/);
+  for(const entry of blobs.values())assert.ok(!entry.bytes.includes(Buffer.from(env.DEEPSEEK_API_KEY)),'server key is not persisted to SQLite snapshots');
   console.log('Netlify HTTP checks passed: production Next.js login, protected APIs, server rendering, real Blobs SDK, shopping list persistence across server restart.');
 } catch(error){console.error(logs);throw error;}
 finally{await stop();await new Promise(resolve=>storage.close(resolve));}

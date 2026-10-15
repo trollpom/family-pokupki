@@ -19,22 +19,35 @@ const autoAccept=(data:MenuData):MenuData=>({...data,profile:currentFamily(data.
 type OwnedPlan=SavedPlan&{owner:string};
 async function planFor(owner:string,planId:string){const row=(await getDb().select().from(t.mealPlans).where(and(eq(t.mealPlans.owner,owner),eq(t.mealPlans.id,planId))))[0];if(!row)throw new AppError('Меню не найдено',404);return {...row,data:autoAccept(JSON.parse(row.data))} as OwnedPlan;}
 async function offersFor(owner:string){const db=getDb();const [manual,catalog]=await Promise.all([db.select().from(t.priceOffers).where(eq(t.priceOffers.owner,owner)),db.select({product:t.products}).from(t.products).innerJoin(t.sources,eq(t.products.sourceId,t.sources.id)).where(and(or(eq(t.products.owner,owner),eq(t.products.owner,SHARED_CATALOG_OWNER)),eq(t.products.regionVerified,1),eq(t.sources.enabled,1),eq(t.products.updatedAt,t.sources.lastSuccess)))]);return [...manual,...catalog.map(row=>catalogOffer(row.product)).filter((o):o is PriceOffer=>o!==null)] as PriceOffer[];}
+const hasServerKey=()=>!!env.DEEPSEEK_API_KEY?.trim();
 async function withAI<T extends {inputTokens:number;outputTokens:number}>(owner:string,profile:MenuData['profile'],work:(key:string,model:string)=>Promise<T>):Promise<T>{
  const db=getDb();if(!profile.aiConsent)throw new AppError('Разрешите передачу параметров питания в DeepSeek в настройках семьи.');
- const credentials=(await db.select().from(t.aiCredentials).where(eq(t.aiCredentials.owner,owner)))[0];if(!credentials||!env.AI_SECRET_ENCRYPTION_KEY)throw new AppError('Добавьте ключ DeepSeek через «Подключить DeepSeek».');
- const calls=(await db.select({n:sql<number>`count(*)`}).from(t.aiRequests).where(and(eq(t.aiRequests.owner,owner),sql`${t.aiRequests.createdAt}>=${new Date(Date.now()-86400000).toISOString()}`)))[0];if(Number(calls.n)>=100)throw new AppError('Достигнут предел: 100 запросов ИИ за 24 часа.',429);
- const lease=now();const acquired=await db.update(t.aiCredentials).set({lastRequestAt:lease}).where(and(eq(t.aiCredentials.owner,owner),or(sql`${t.aiCredentials.lastRequestAt} is null`,sql`${t.aiCredentials.lastRequestAt}<${new Date(Date.now()-95000).toISOString()}`))).returning();if(!acquired.length)throw new AppError('Предыдущий запрос ИИ ещё выполняется. Дождитесь результата.',429);
- const requestId=uid();await db.insert(t.aiRequests).values({id:requestId,owner,status:'pending',createdAt:lease});
- try{const key=await openSecret(env.AI_SECRET_ENCRYPTION_KEY,credentials.encryptedKey,owner),result=await work(key,credentials.model);await db.update(t.aiRequests).set({status:'ok',inputTokens:result.inputTokens,outputTokens:result.outputTokens}).where(eq(t.aiRequests.id,requestId));return result;}
+ const credentials=(await db.select().from(t.aiCredentials).where(eq(t.aiCredentials.owner,owner)))[0];
+ let key:string,model:string;
+ if(hasServerKey()){
+  try{key=normalizeDeepseekKey(env.DEEPSEEK_API_KEY);}catch{throw new AppError('Серверная настройка DEEPSEEK_API_KEY содержит неверное значение. Проверьте её в Netlify.',503);}
+  model='deepseek-flash';
+ }else{
+  if(!credentials||!env.AI_SECRET_ENCRYPTION_KEY)throw new AppError('Добавьте ключ DeepSeek через «Подключить DeepSeek» или серверную настройку DEEPSEEK_API_KEY.');
+  key=await openSecret(env.AI_SECRET_ENCRYPTION_KEY,credentials.encryptedKey,owner);model=credentials.model;
+ }
+ const since=new Date(Date.now()-86400000).toISOString(),fresh=new Date(Date.now()-95000).toISOString();
+ const calls=(await db.select({n:sql<number>`count(*)`}).from(t.aiRequests).where(and(eq(t.aiRequests.owner,owner),sql`${t.aiRequests.createdAt}>=${since}`)))[0];if(Number(calls.n)>=100)throw new AppError('Достигнут предел: 100 запросов ИИ за 24 часа.',429);
+ // Reserve quota and an owner lease atomically, for either credential source.
+ // Retry-safe SQL never repeats the external paid request.
+ const requestId=uid(),lease=now();
+ const acquired=await db.run(sql`insert into ai_requests (id,owner,status,created_at) select ${requestId},${owner},'pending',${lease} where not exists (select 1 from ai_requests where owner=${owner} and status='pending' and created_at>=${fresh}) and (select count(*) from ai_requests where owner=${owner} and created_at>=${since})<100`);
+ if(!acquired.meta.changes)throw new AppError('Предыдущий запрос ИИ ещё выполняется или достигнут суточный предел. Дождитесь результата.',429);
+ try{const result=await work(key,model);await db.update(t.aiRequests).set({status:'ok',inputTokens:result.inputTokens,outputTokens:result.outputTokens}).where(eq(t.aiRequests.id,requestId));return result;}
  catch(error){await db.update(t.aiRequests).set({status:'error'}).where(eq(t.aiRequests.id,requestId));throw new AppError(error instanceof Error&&error.name!=='AbortError'?error.message:'DeepSeek не ответил вовремя. Текущее меню сохранено.',502);}
- finally{await db.update(t.aiCredentials).set({lastRequestAt:null}).where(and(eq(t.aiCredentials.owner,owner),eq(t.aiCredentials.lastRequestAt,lease)));}
 }
+
 async function updatePlan(plan:OwnedPlan,expected:number,data:MenuData){if(plan.status!=='draft')throw new AppError('Это меню уже превращено в покупки или обрабатывается. Создайте новый план.',409);const changed=await getDb().update(t.mealPlans).set({data:JSON.stringify(data),revision:sql`${t.mealPlans.revision}+1`,updatedAt:now()}).where(and(eq(t.mealPlans.id,plan.id),eq(t.mealPlans.owner,plan.owner),eq(t.mealPlans.revision,expected),eq(t.mealPlans.status,'draft'))).returning();if(!changed.length)throw new AppError('Меню изменилось на другом устройстве. Обновите страницу.',409);}
 export async function getPlanner(user:ChatGPTUser):Promise<PlannerState>{
   const db=getDb();await ensureCatalogSource();await db.update(t.mealPlans).set({status:'draft',revision:sql`${t.mealPlans.revision}+1`,updatedAt:now()}).where(and(eq(t.mealPlans.owner,user.userId),eq(t.mealPlans.status,'finalizing'),sql`${t.mealPlans.updatedAt}<${new Date(Date.now()-120000).toISOString()}`));
   const [family,plans,offers,credentials,calls]=await Promise.all([db.select().from(t.familySettings).where(eq(t.familySettings.owner,user.userId)),db.select().from(t.mealPlans).where(eq(t.mealPlans.owner,user.userId)).orderBy(desc(t.mealPlans.createdAt)).limit(10),offersFor(user.userId),db.select({model:t.aiCredentials.model,checkedAt:t.aiCredentials.checkedAt}).from(t.aiCredentials).where(eq(t.aiCredentials.owner,user.userId)),db.select({n:sql<number>`count(*)`}).from(t.aiRequests).where(and(eq(t.aiRequests.owner,user.userId),sql`${t.aiRequests.createdAt}>=${new Date(Date.now()-86400000).toISOString()}`))]);
   const [sourceRows,productCounts]=await Promise.all([db.select().from(t.sources).where(or(eq(t.sources.owner,user.userId),eq(t.sources.owner,SHARED_CATALOG_OWNER))),db.select({sourceId:t.products.sourceId,n:sql<number>`count(*)`}).from(t.products).where(or(eq(t.products.owner,user.userId),eq(t.products.owner,SHARED_CATALOG_OWNER))).groupBy(t.products.sourceId)]);
-  return {family:family[0]?{profile:currentFamily(JSON.parse(family[0].data)),revision:family[0].revision}:null,plans:plans.map(p=>({...p,data:autoAccept(JSON.parse(p.data))})),offers,ai:{configured:!!credentials[0],model:credentials[0]?.model||'deepseek-flash',checkedAt:credentials[0]?.checkedAt||null,callsToday:Number(calls[0].n)},sources:sourceRows.filter(s=>s.enabled).map(s=>({id:s.id,store:s.store,city:s.city,url:s.url,status:s.status,message:s.message,lastSuccess:s.lastSuccess,products:Number(productCounts.find(c=>c.sourceId===s.id)?.n||0)})),catalogMessage:'Сравниваются доступные упаковки и акции выбранного города. Проверяются официальные каталоги сетей и региональные каталоги акций Прошопера. У каждого предложения указан источник; цены SPAR из электронного поиска и обычные цены Смарт на Федосеенко, 44А ориентировочные; неоднозначные скидки Смарт не применяются, условия и наличие проверяйте в магазине. Неполный ассортимент не позволяет гарантировать самый дешёвый магазин для всей корзины.'};
+  return {family:family[0]?{profile:currentFamily(JSON.parse(family[0].data)),revision:family[0].revision}:null,plans:plans.map(p=>({...p,data:autoAccept(JSON.parse(p.data))})),offers,ai:{configured:hasServerKey()||!!credentials[0],source:hasServerKey()?'server':credentials[0]?'saved':null,model:hasServerKey()?'deepseek-flash':credentials[0]?.model||'deepseek-flash',checkedAt:hasServerKey()?null:credentials[0]?.checkedAt||null,callsToday:Number(calls[0].n)},sources:sourceRows.filter(s=>s.enabled).map(s=>({id:s.id,store:s.store,city:s.city,url:s.url,status:s.status,message:s.message,lastSuccess:s.lastSuccess,products:Number(productCounts.find(c=>c.sourceId===s.id)?.n||0)})),catalogMessage:'Сравниваются доступные упаковки и акции выбранного города. Проверяются официальные каталоги сетей и региональные каталоги акций Прошопера. У каждого предложения указан источник; цены SPAR из электронного поиска и обычные цены Смарт на Федосеенко, 44А ориентировочные; неоднозначные скидки Смарт не применяются, условия и наличие проверяйте в магазине. Неполный ассортимент не позволяет гарантировать самый дешёвый магазин для всей корзины.'};
 }
 export async function plannerAction(user:ChatGPTUser,input:Record<string,unknown>):Promise<Record<string,unknown>>{
  const db=getDb(),owner=user.userId;
@@ -47,12 +60,13 @@ export async function plannerAction(user:ChatGPTUser,input:Record<string,unknown
    return {message:'Параметры семьи сохранены'};
   }
   case 'saveAI':{
+   if(hasServerKey())throw new AppError('DeepSeek подключён через сервер. Ключ меняется в DEEPSEEK_API_KEY в настройках Netlify.');
    let key:string;try{key=normalizeDeepseekKey(input.key);}catch(error){throw new AppError(error instanceof Error?error.message:'Проверьте API-ключ DeepSeek.');}
    const v=z.object({model:z.enum(deepseekModels)}).parse(input);if(!env.AI_SECRET_ENCRYPTION_KEY)throw new AppError('Защищённое хранение ключа ещё не настроено',503);
    try{await checkDeepseekKey(key,v.model);}catch(error){throw new AppError(error instanceof Error?error.message:'Не удалось проверить ключ DeepSeek',400);}const encryptedKey=await sealSecret(env.AI_SECRET_ENCRYPTION_KEY,key,owner),checkedAt=now();
    await db.insert(t.aiCredentials).values({owner,encryptedKey,model:v.model,checkedAt,updatedAt:checkedAt}).onConflictDoUpdate({target:t.aiCredentials.owner,set:{encryptedKey,model:v.model,checkedAt,updatedAt:checkedAt}});return {message:'Ключ проверен и сохранён на сервере'};
   }
-  case 'removeAI':{await db.delete(t.aiCredentials).where(eq(t.aiCredentials.owner,owner));return {message:'Ключ удалён из приложения'};}
+  case 'removeAI':{if(hasServerKey())throw new AppError('Серверный ключ управляется в настройках Netlify.');await db.delete(t.aiCredentials).where(eq(t.aiCredentials.owner,owner));return {message:'Ключ удалён из приложения'};}
   case 'generate':{
    const v=z.object({mode:z.enum(['deepseek','local']),startDate:isoDate}).parse(input);const family=(await db.select().from(t.familySettings).where(eq(t.familySettings.owner,owner)))[0];if(!family)throw new AppError('Сначала заполните параметры семьи');const profile=familySchema.parse(currentFamily(JSON.parse(family.data))),problem=profileProblem(profile);if(problem)throw new AppError(problem);
    let pool:Parameters<typeof buildMenu>[3],origin:'local'|'deepseek'='local';
